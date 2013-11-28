@@ -15,6 +15,12 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * This is a software user, generally a clinician in the intensive care unit.
+ * 
+ * Normal users can add and edit patients, enter patient data, fire and store decisions, and accept or decline advice.
+ * 
+ * Administrative users can also add new users with either normal or administrative rights. 
+ * 
+ * Superusers can do anything, including reseting all databases (destructive), viewing rule traces, or editing rules.
  * <!-- end-model-doc -->
  * @see glucose.GlucosePackage#getAccessType()
  * @model
@@ -39,7 +45,15 @@ public enum AccessType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ADMINISTRATIVE(1, "Administrative", "Administrative");
+	ADMINISTRATIVE(1, "Administrative", "Administrative"), /**
+	 * The '<em><b>Superuser</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SUPERUSER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SUPERUSER(2, "Superuser", "Superuser");
 
 	/**
 	 * The '<em><b>Normal</b></em>' literal value.
@@ -72,6 +86,21 @@ public enum AccessType implements Enumerator {
 	public static final int ADMINISTRATIVE_VALUE = 1;
 
 	/**
+	 * The '<em><b>Superuser</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Superuser</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SUPERUSER
+	 * @model name="Superuser"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SUPERUSER_VALUE = 2;
+
+	/**
 	 * An array of all the '<em><b>Access Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,6 +110,7 @@ public enum AccessType implements Enumerator {
 		new AccessType[] {
 			NORMAL,
 			ADMINISTRATIVE,
+			SUPERUSER,
 		};
 
 	/**
@@ -133,6 +163,7 @@ public enum AccessType implements Enumerator {
 		switch (value) {
 			case NORMAL_VALUE: return NORMAL;
 			case ADMINISTRATIVE_VALUE: return ADMINISTRATIVE;
+			case SUPERUSER_VALUE: return SUPERUSER;
 		}
 		return null;
 	}
