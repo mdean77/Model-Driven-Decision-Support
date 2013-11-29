@@ -994,7 +994,7 @@ public class GlucosePackageImpl extends EPackageImpl implements GlucosePackage {
 		   source, 
 		   new String[] {
 			 "appinfo", "@Id \n@GeneratedValue(generator=\"system-uuid\")\n"
-		   });																						
+		   });																							
 		addAnnotation
 		  (getClinicalDecision_DecisionID(), 
 		   source, 

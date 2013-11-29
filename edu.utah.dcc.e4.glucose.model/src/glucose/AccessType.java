@@ -63,6 +63,9 @@ public enum AccessType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Normal access only allows edits of patients, patient data, and entry of clinical data.
+	 * <!-- end-model-doc -->
 	 * @see #NORMAL
 	 * @model name="Normal"
 	 * @generated

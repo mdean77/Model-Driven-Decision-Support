@@ -109,7 +109,11 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This is a software user, generally a clinician in the intensive care unit.&#xA;&#xA;Normal users can add and edit patients, enter patient data, fire and store decisions, and accept or decline advice.&#xA;&#xA;Administrative users can also add new users with either normal or administrative rights. &#xA;&#xA;Superusers can do anything, including reseting all databases (destructive), viewing rule traces, or editing rules."/>
     </eAnnotations>
-    <eLiterals name="Normal" literal="Normal"/>
+    <eLiterals name="Normal" literal="Normal">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Normal access only allows edits of patients, patient data, and entry of clinical data."/>
+      </eAnnotations>
+    </eLiterals>
     <eLiterals name="Administrative" value="1" literal="Administrative"/>
     <eLiterals name="Superuser" value="2" literal="Superuser"/>
   </eClassifiers>
