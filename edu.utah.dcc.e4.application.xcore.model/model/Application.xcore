@@ -1,6 +1,6 @@
 @Ecore(nsPrefix="edu.utah.dcc.e4", nsURI="http://edu/utah/dcc/e4/application/xcore/model")
 @TeneoJpa(appinfo="@GenericGenerator(name=\"system-uuid\", strategy = \"uuid2\")")
-@GenModel(modelDirectory="/edu.utah.dcc.e4.application.xcore.model/src-gen", importerID="org.eclipse.emf.importer.ecore", editorDirectory="/edu.utah.dcc.e4.application.xcore.model/src-gen", editDirectory="/edu.utah.dcc.e4.application.xcore.model/src-gen", testsDirectory="/edu.utah.dcc.e4.application.xcore.model/src-gen", providerRootExtendsClass="", tableProviders="true")
+@GenModel(modelDirectory="/edu.utah.dcc.e4.application.xcore.model/src", importerID="org.eclipse.emf.importer.ecore", editorDirectory="/edu.utah.dcc.e4.application.xcore.model/src", editDirectory="/edu.utah.dcc.e4.application.xcore.model/src", testsDirectory="/edu.utah.dcc.e4.application.xcore.model.tests/src", providerRootExtendsClass="", tableProviders="true")
 package application
 
 import java.text.DateFormat
@@ -10,7 +10,7 @@ annotation "teneo.jpa" as TeneoJpa @GenModel(documentation="Person entity is use
 class Person {
 	@TeneoJpa(appinfo="@Basic(optional=false)")
 	String lastName = ""
-	String firstName = ""
+	String firstName = "" 
 	@TeneoJpa(appinfo="@Id \n@GeneratedValue(generator=\"system-uuid\")\n")
 	id String personID
 	@GenModel(documentation="Status of the person record.")
@@ -24,27 +24,21 @@ class Patient extends Person {
 	@GenModel(documentation="Weight is measured in kilograms.")
 	Double weight
 	@GenModel(documentation="Medical record number should be the hospital medical record number, not the visit account record.")
-	String medRecNum
+	String medRecNum 
 	@GenModel(documentation="This is the ID used in the specific study in which the patient is enrolled.")
 	String studyID
 	@GenModel(documentation="Date of birth of patient.")
-	calendar birthdate
+	calendar birthdate 
 	@GenModel(documentation="Height of the patient, measured in centimeters.")
 	Double height  
 	contains ClinicalDecision[] decisions opposite patient keys observationDate , userAction
 	contains LaboratoryTest[] labTests opposite patient
-	refers User createdBy
+	refers User createdBy 
 	derived String birthDateString get {
 		if (birthdate != null) {
 			DateFormat.getDateInstance(DateFormat.LONG).format(birthdate.getTime());
 		}
-	}
-	op long getTodayAgeYears() {
-		getDeltaAgeYears(new java.util.GregorianCalendar())
-	}
-	op long getTodayAgeDays() {
-		getDeltaAgeDays(new java.util.GregorianCalendar())
-	}
+	}  
 	op long getDeltaAgeDays(calendar date) {
 		if (birthdate != null)
 			Math.abs(birthdate.getTimeInMillis() - date.getTimeInMillis()) / (1000 * 60 * 60 * 24)
@@ -56,7 +50,7 @@ class Patient extends Person {
 
 @GenModel(documentation="This is a clinical user of the software, generally a nurse or physician.")
 class User extends Person {
-	AccessType accountRights = "Normal"
+	AccessType accountRights = "Normal" 
 	String accountName
 	String passwordDigest
 	refers User createdBy
@@ -139,6 +133,10 @@ enum UserActionType {
 //}
 
 class IntensiveCareUnit {
+	@TeneoJpa(appinfo="@Id \n@GeneratedValue(generator=\"system-uuid\")")
+	id String icuID
+	String hospitalName
+	String acronym
 	contains Patient[] patients keys lastName , firstName , medRecNum , studyID
 	contains User[] users keys lastName , firstName
 }

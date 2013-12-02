@@ -12,7 +12,6 @@ Export-Package: application,
  application.impl,
  application.presentation,
  application.provider,
- application.tests,
  application.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
