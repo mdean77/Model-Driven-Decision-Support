@@ -1,0 +1,175 @@
+@Ecore(nsPrefix="edu.utah.dcc.e4", nsURI="http://edu/utah/dcc/e4/application/xcore/model")
+@TeneoJpa(appinfo="@GenericGenerator(name=\"system-uuid\", strategy = \"uuid2\")")
+@GenModel(modelDirectory="/edu.utah.dcc.e4.application.xcore.model/src-gen", importerID="org.eclipse.emf.importer.ecore", editorDirectory="/edu.utah.dcc.e4.application.xcore.model/src-gen", editDirectory="/edu.utah.dcc.e4.application.xcore.model/src-gen", testsDirectory="/edu.utah.dcc.e4.application.xcore.model/src-gen", providerRootExtendsClass="", tableProviders="true")
+package application
+
+import java.text.DateFormat
+
+
+annotation "teneo.jpa" as TeneoJpa @GenModel(documentation="Person entity is used as a base class for patients and users.")
+class Person {
+	@TeneoJpa(appinfo="@Basic(optional=false)")
+	String lastName = ""
+	String firstName = ""
+	@TeneoJpa(appinfo="@Id \n@GeneratedValue(generator=\"system-uuid\")\n")
+	id String personID
+	@GenModel(documentation="Status of the person record.")
+	StatusType status = "Current"
+	@GenModel(body="return getLastName().trim() + \", \" + getFirstName().trim();")
+	op String getName()
+} 
+
+@GenModel(documentation="Patient object represents a patient in the intensive care unit.")
+class Patient extends Person {
+	@GenModel(documentation="Weight is measured in kilograms.")
+	Double weight
+	@GenModel(documentation="Medical record number should be the hospital medical record number, not the visit account record.")
+	String medRecNum
+	@GenModel(documentation="This is the ID used in the specific study in which the patient is enrolled.")
+	String studyID
+	@GenModel(documentation="Date of birth of patient.")
+	calendar birthdate
+	@GenModel(documentation="Height of the patient, measured in centimeters.")
+	Double height  
+	contains ClinicalDecision[] decisions opposite patient keys observationDate , userAction
+	contains LaboratoryTest[] labTests opposite patient
+	refers User createdBy
+	derived String birthDateString get {
+		if (birthdate != null) {
+			DateFormat.getDateInstance(DateFormat.LONG).format(birthdate.getTime());
+		}
+	}
+	op long getTodayAgeYears() {
+		getDeltaAgeYears(new java.util.GregorianCalendar())
+	}
+	op long getTodayAgeDays() {
+		getDeltaAgeDays(new java.util.GregorianCalendar())
+	}
+	op long getDeltaAgeDays(calendar date) {
+		if (birthdate != null)
+			Math.abs(birthdate.getTimeInMillis() - date.getTimeInMillis()) / (1000 * 60 * 60 * 24)
+	}
+	op long getDeltaAgeYears(calendar date) {
+		getDeltaAgeDays(date) / 365
+	}
+}
+
+@GenModel(documentation="This is a clinical user of the software, generally a nurse or physician.")
+class User extends Person {
+	AccessType accountRights = "Normal"
+	String accountName
+	String passwordDigest
+	refers User createdBy
+}
+
+@GenModel(documentation="This is a software user, generally a clinician in the intensive care unit.\n\nNormal users can add and edit patients, enter patient data, fire and store decisions, and accept or decline advice.\n\nAdministrative users can also add new users with either normal or administrative rights. \n\nSuperusers can do anything, including reseting all databases (destructive), viewing rule traces, or editing rules.")
+enum AccessType {
+	@GenModel(documentation="Normal access only allows edits of patients, patient data, and entry of clinical data.")
+	Normal
+	Administrative = 1
+	Superuser = 2
+}
+
+@GenModel(documentation="Status Type is used to classify patients in the software.")
+enum StatusType {
+	@GenModel(documentation="Patient is stored locally and is currently active.")
+	Current
+	@GenModel(documentation="Patient record has been archived to remote database.")
+	Archived = 1
+	@GenModel(documentation="Patient is invalid, and probably should not be archived to remote database.\nWe need to determine this with a Preference setting so that the administrative\nuser can choose whether to keep invalid patient records in the target.")
+	Invalid = 2
+	@GenModel(documentation="Patient is a sample patient and should NOT be archived to remote database.")
+	Sample = 3
+}
+
+type calendar wraps java.util.Calendar
+type gregorian wraps java.util.GregorianCalendar
+
+class ClinicalDecision {
+	calendar decisionTimeStamp
+	calendar observationDate
+	double patientWeight
+	double patientHeight
+	int patientAgeDays
+	String adviceText = ""
+	String rulesFiredText = ""
+	String rationaleText = ""
+	String declineComment = ""
+	String acceptComment = ""
+	String otherComment = ""
+	UserActionType userAction = "Pending"
+	int minutesToNextEvaluation = "999999"
+	refers User createdBy
+	@TeneoJpa(appinfo="@Id \n@GeneratedValue(generator=\"system-uuid\")")
+	id String decisionID
+	StatusType status = "Current"
+	op void advise(String message){
+		if (adviceText.length() == 0)
+		adviceText = message else adviceText = adviceText + message
+	}
+	container Patient[1] patient opposite decisions
+}
+
+@GenModel(documentation="These are the four potential actions of a user of our CDS system when clinical data have been entered.\nWhen these actions are selected, dirty flags should be turned off because data are saved.\n\nIn addition there is a pending status that is used when a new decision object is created.")
+enum UserActionType {
+	@GenModel(documentation="User accepts the advice of the software.  Accept comment will be possible.")
+	Accept
+	@GenModel(documentation="User declines to follow advice from the software.  Decline comment will be required.")
+	Decline = 1
+	@GenModel(documentation="User is entering clinical data for storage but software is not providing advice.  Useful for entering old clinical data.")
+	Backchart = 2
+	@GenModel(documentation="Used to indicate that the inference engine was turned off, so there was no active decision support provided.")
+	Passive = 3
+	@GenModel(documentation="Used when new decision object is created prior to any user action.")
+	Pending = 4
+}
+
+//@GenModel(documentation="This is a glucose insulin protocol decision.")
+//class GlucoseDecision extends ClinicalDecision {
+//	Integer previousGlucoseConcentration
+//	calendar previousObservationTime
+//	Integer serumGlucoseConcentration
+//	Double currentInsulinDripRate
+//	CarbohydrateStatusType carbohydrateStatus
+//	Double recommendedInsulinDripRate
+//	Double recommendedInsulinBolus
+//	Double recommendedGlucoseBolus
+//	@GenModel(documentation="Adult or pediatric, determines how dose recommendations are displayed.")
+//	String insulinMode
+//}
+
+class IntensiveCareUnit {
+	contains Patient[] patients keys lastName , firstName , medRecNum , studyID
+	contains User[] users keys lastName , firstName
+}
+
+//enum CarbohydrateStatusType {
+//	unchanged as "No Change"
+//	decreased as "Decreased or stopped" = 1
+//	increased as "Increased or started" = 2
+//}
+
+@GenModel(documentation="Laboratory test entity, contains 1 or more TestResult objects.")
+class LaboratoryTest {
+	@TeneoJpa(appinfo="@Id \n@GeneratedValue(generator=\"system-uuid\")")
+	id String testID
+	@GenModel(documentation="Validity of test.  Applies to entire panel, not individual tests.")
+	boolean valid
+	refers User createdBy
+	calendar timeOfSpecimenCollection
+	String loincCode
+	String labelName
+	contains TestResult[1..*] results opposite laboratoryTest
+	container Patient patient opposite labTests
+}
+
+@GenModel(documentation="Single test result, contained within a LaboratoryTest object.")
+class TestResult {
+	@TeneoJpa(appinfo="@Id \n@GeneratedValue(generator=\"system-uuid\")")
+	id String resultID
+	String loincCode
+	String labelName
+	String conventionalTextResult
+	String conventionalUnits
+	container LaboratoryTest laboratoryTest  opposite results
+}

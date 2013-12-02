@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Application -->
+      <package
+            uri="http://edu/utah/dcc/e4/application/xcore/model"
+            class="application.ApplicationPackage"
+            genModel="model/Application.xcore"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Application -->
+      <factory
+            uri="http://edu/utah/dcc/e4/application/xcore/model"
+            class="application.provider.ApplicationItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource
+               org.eclipse.emf.edit.provider.ITableItemLabelProvider"/>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Application -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="application.presentation.ApplicationModelWizardID"
+            name="%_UI_ApplicationModelWizard_label"
+            class="application.presentation.ApplicationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ApplicationModelFile.gif">
+         <description>%_UI_ApplicationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Application -->
+      <editor
+            id="application.presentation.ApplicationEditorID"
+            name="%_UI_ApplicationEditor_label"
+            icon="icons/full/obj16/ApplicationModelFile.gif"
+            extensions="application"
+            class="application.presentation.ApplicationEditor"
+            contributorClass="application.presentation.ApplicationActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
