@@ -12,9 +12,9 @@ import application.Person;
  * A test case for the model object '<em><b>Person</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following operations are tested:
+ * The following features are tested:
  * <ul>
- *   <li>{@link application.Person#getName() <em>Get Name</em>}</li>
+ *   <li>{@link application.Person#getName() <em>Name</em>}</li>
  * </ul>
  * </p>
  * @generated
