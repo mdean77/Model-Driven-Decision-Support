@@ -1,0 +1,30 @@
+//@Ecore(nsPrefix="edu.utah.dcc.e4", nsURI="http://edu/utah/dcc/e4/glucose/xcore/model")
+//@TeneoJpa(appinfo="@GenericGenerator(name=\"system-uuid\", strategy = \"uuid2\")")
+@GenModel(modelDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src-gen", importerID="org.eclipse.emf.importer.ecore", editorDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src-gen", editDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src-gen", testsDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src-gen", providerRootExtendsClass="", tableProviders="true")
+package glucose
+
+import application.ClinicalDecision
+type calendar wraps java.util.Calendar
+
+@GenModel(documentation="This is a glucose insulin protocol decision.")
+class GlucoseDecision extends ClinicalDecision {
+	Integer previousGlucoseConcentration
+	calendar previousObservationTime
+	Integer serumGlucoseConcentration
+	Double currentInsulinDripRate
+	CarbohydrateStatusType carbohydrateStatus
+	Double recommendedInsulinDripRate
+	Double recommendedInsulinBolus
+	Double recommendedGlucoseBolus
+	@GenModel(documentation="Adult or pediatric, determines how dose recommendations are displayed.")
+	String insulinMode
+}
+
+enum CarbohydrateStatusType {
+	unchanged as "No Change"
+	decreased as "Decreased or stopped" = 1
+	increased as "Increased or started" = 2
+}
+
+
+

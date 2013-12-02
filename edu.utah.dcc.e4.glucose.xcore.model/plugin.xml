@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Glucose -->
+      <package
+            uri="glucose"
+            class="glucose.GlucosePackage"
+            genModel="model/Glucose.xcore"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Glucose -->
+      <factory
+            uri="glucose"
+            class="glucose.provider.GlucoseItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource
+               org.eclipse.emf.edit.provider.ITableItemLabelProvider"/>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Glucose -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="glucose.presentation.GlucoseModelWizardID"
+            name="%_UI_GlucoseModelWizard_label"
+            class="glucose.presentation.GlucoseModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GlucoseModelFile.gif">
+         <description>%_UI_GlucoseModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Glucose -->
+      <editor
+            id="glucose.presentation.GlucoseEditorID"
+            name="%_UI_GlucoseEditor_label"
+            icon="icons/full/obj16/GlucoseModelFile.gif"
+            extensions="glucose"
+            class="glucose.presentation.GlucoseEditor"
+            contributorClass="glucose.presentation.GlucoseActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Laboratory -->
+      <package
+            uri="laboratory"
+            class="laboratory.LaboratoryPackage"
+            genModel="model/Laboratory.xcore"/>
+   </extension>
+
+</plugin>
