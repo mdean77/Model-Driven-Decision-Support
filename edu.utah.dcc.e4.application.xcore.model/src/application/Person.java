@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link application.Person#getFirstName <em>First Name</em>}</li>
  *   <li>{@link application.Person#getPersonID <em>Person ID</em>}</li>
  *   <li>{@link application.Person#getStatus <em>Status</em>}</li>
+ *   <li>{@link application.Person#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -141,10 +142,17 @@ public interface Person extends EObject
   void setStatus(StatusType value);
 
   /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
-   * @model kind="operation" unique="false"
-   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return getLastName().trim() + \", \" + getFirstName().trim();'"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see application.ApplicationPackage#getPerson_Name()
+   * @model unique="false" transient="true" changeable="false" volatile="true" derived="true"
+   *        annotation="http://www.eclipse.org/emf/2002/GenModel get='<%application.Person%> _this = this;\n<%java.lang.String%> _lastName = _this.getLastName();\n<%java.lang.String%> _trim = _lastName.trim();\n<%java.lang.String%> _plus = (_trim + \", \");\n<%application.Person%> _this_1 = this;\n<%java.lang.String%> _firstName = _this_1.getFirstName();\n<%java.lang.String%> _trim_1 = _firstName.trim();\n<%java.lang.String%> _plus_1 = (_plus + _trim_1);\nreturn _plus_1;'"
    * @generated
    */
   String getName();

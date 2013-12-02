@@ -293,7 +293,7 @@ public class PatientItemProvider
   @Override
   public String getText(Object object)
   {
-    String label = ((Patient)object).getLastName();
+    String label = ((Patient)object).getName();
     return label == null || label.length() == 0 ?
       getString("_UI_Patient_type") :
       getString("_UI_Patient_type") + " " + label;

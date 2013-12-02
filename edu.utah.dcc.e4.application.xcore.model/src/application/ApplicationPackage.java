@@ -110,22 +110,22 @@ public interface ApplicationPackage extends EPackage
   int PERSON__STATUS = 3;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PERSON__NAME = 4;
+
+  /**
    * The number of structural features of the '<em>Person</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PERSON_FEATURE_COUNT = 4;
-
-  /**
-   * The operation id for the '<em>Get Name</em>' operation.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PERSON___GET_NAME = 0;
+  int PERSON_FEATURE_COUNT = 5;
 
   /**
    * The number of operations of the '<em>Person</em>' class.
@@ -134,7 +134,7 @@ public interface ApplicationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERSON_OPERATION_COUNT = 1;
+  int PERSON_OPERATION_COUNT = 0;
 
   /**
    * The meta object id for the '{@link application.impl.PatientImpl <em>Patient</em>}' class.
@@ -181,6 +181,15 @@ public interface ApplicationPackage extends EPackage
    * @ordered
    */
   int PATIENT__STATUS = PERSON__STATUS;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATIENT__NAME = PERSON__NAME;
 
   /**
    * The feature id for the '<em><b>Weight</b></em>' attribute.
@@ -273,15 +282,6 @@ public interface ApplicationPackage extends EPackage
   int PATIENT_FEATURE_COUNT = PERSON_FEATURE_COUNT + 9;
 
   /**
-   * The operation id for the '<em>Get Name</em>' operation.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PATIENT___GET_NAME = PERSON___GET_NAME;
-
-  /**
    * The operation id for the '<em>Get Delta Age Days</em>' operation.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -355,6 +355,15 @@ public interface ApplicationPackage extends EPackage
   int USER__STATUS = PERSON__STATUS;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USER__NAME = PERSON__NAME;
+
+  /**
    * The feature id for the '<em><b>Account Rights</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -398,15 +407,6 @@ public interface ApplicationPackage extends EPackage
    * @ordered
    */
   int USER_FEATURE_COUNT = PERSON_FEATURE_COUNT + 4;
-
-  /**
-   * The operation id for the '<em>Get Name</em>' operation.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USER___GET_NAME = PERSON___GET_NAME;
 
   /**
    * The number of operations of the '<em>User</em>' class.
@@ -968,14 +968,15 @@ public interface ApplicationPackage extends EPackage
   EAttribute getPerson_Status();
 
   /**
-   * Returns the meta object for the '{@link application.Person#getName() <em>Get Name</em>}' operation.
+   * Returns the meta object for the attribute '{@link application.Person#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the '<em>Get Name</em>' operation.
+   * @return the meta object for the attribute '<em>Name</em>'.
    * @see application.Person#getName()
+   * @see #getPerson()
    * @generated
    */
-  EOperation getPerson__GetName();
+  EAttribute getPerson_Name();
 
   /**
    * Returns the meta object for class '{@link application.Patient <em>Patient</em>}'.
@@ -1725,12 +1726,12 @@ public interface ApplicationPackage extends EPackage
     EAttribute PERSON__STATUS = eINSTANCE.getPerson_Status();
 
     /**
-     * The meta object literal for the '<em><b>Get Name</b></em>' operation.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EOperation PERSON___GET_NAME = eINSTANCE.getPerson__GetName();
+    EAttribute PERSON__NAME = eINSTANCE.getPerson_Name();
 
     /**
      * The meta object literal for the '{@link application.impl.PatientImpl <em>Patient</em>}' class.

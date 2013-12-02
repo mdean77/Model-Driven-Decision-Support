@@ -184,7 +184,7 @@ public class UserItemProvider
   @Override
   public String getText(Object object)
   {
-    String label = ((User)object).getLastName();
+    String label = ((User)object).getName();
     return label == null || label.length() == 0 ?
       getString("_UI_User_type") :
       getString("_UI_User_type") + " " + label;

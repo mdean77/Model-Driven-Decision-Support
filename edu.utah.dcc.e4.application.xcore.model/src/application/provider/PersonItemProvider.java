@@ -70,6 +70,7 @@ public class PersonItemProvider
       addFirstNamePropertyDescriptor(object);
       addPersonIDPropertyDescriptor(object);
       addStatusPropertyDescriptor(object);
+      addNamePropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -167,6 +168,29 @@ public class PersonItemProvider
   }
 
   /**
+   * This adds a property descriptor for the Name feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addNamePropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_Person_name_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Person_name_feature", "_UI_Person_type"),
+         ApplicationPackage.Literals.PERSON__NAME,
+         false,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
+  }
+
+  /**
    * This returns Person.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -187,7 +211,7 @@ public class PersonItemProvider
   @Override
   public String getText(Object object)
   {
-    String label = ((Person)object).getLastName();
+    String label = ((Person)object).getName();
     return label == null || label.length() == 0 ?
       getString("_UI_Person_type") :
       getString("_UI_Person_type") + " " + label;
@@ -211,6 +235,7 @@ public class PersonItemProvider
       case ApplicationPackage.PERSON__FIRST_NAME:
       case ApplicationPackage.PERSON__PERSON_ID:
       case ApplicationPackage.PERSON__STATUS:
+      case ApplicationPackage.PERSON__NAME:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

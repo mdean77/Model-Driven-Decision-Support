@@ -5,15 +5,8 @@ package application.impl;
 import application.ApplicationPackage;
 import application.Person;
 import application.StatusType;
-
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -28,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link application.impl.PersonImpl#getFirstName <em>First Name</em>}</li>
  *   <li>{@link application.impl.PersonImpl#getPersonID <em>Person ID</em>}</li>
  *   <li>{@link application.impl.PersonImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link application.impl.PersonImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -114,6 +108,16 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person
    * @ordered
    */
   protected StatusType status = STATUS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -235,7 +239,15 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person
    */
   public String getName()
   {
-    return getLastName().trim() + ", " + getFirstName().trim();
+    Person _this = this;
+    String _lastName = _this.getLastName();
+    String _trim = _lastName.trim();
+    String _plus = (_trim + ", ");
+    Person _this_1 = this;
+    String _firstName = _this_1.getFirstName();
+    String _trim_1 = _firstName.trim();
+    String _plus_1 = (_plus + _trim_1);
+    return _plus_1;
   }
 
   /**
@@ -256,6 +268,8 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person
         return getPersonID();
       case ApplicationPackage.PERSON__STATUS:
         return getStatus();
+      case ApplicationPackage.PERSON__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -330,24 +344,10 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person
         return PERSON_ID_EDEFAULT == null ? personID != null : !PERSON_ID_EDEFAULT.equals(personID);
       case ApplicationPackage.PERSON__STATUS:
         return status != STATUS_EDEFAULT;
+      case ApplicationPackage.PERSON__NAME:
+        return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException
-  {
-    switch (operationID)
-    {
-      case ApplicationPackage.PERSON___GET_NAME:
-        return getName();
-    }
-    return super.eInvoke(operationID, arguments);
   }
 
   /**

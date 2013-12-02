@@ -242,9 +242,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EOperation getPerson__GetName()
+  public EAttribute getPerson_Name()
   {
-    return personEClass.getEOperations().get(0);
+    return (EAttribute)personEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -912,7 +912,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     createEAttribute(personEClass, PERSON__FIRST_NAME);
     createEAttribute(personEClass, PERSON__PERSON_ID);
     createEAttribute(personEClass, PERSON__STATUS);
-    createEOperation(personEClass, PERSON___GET_NAME);
+    createEAttribute(personEClass, PERSON__NAME);
 
     patientEClass = createEClass(PATIENT);
     createEAttribute(patientEClass, PATIENT__WEIGHT);
@@ -1029,8 +1029,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     initEAttribute(getPerson_FirstName(), theEcorePackage.getEString(), "firstName", "", 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPerson_PersonID(), theEcorePackage.getEString(), "personID", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPerson_Status(), this.getStatusType(), "status", "Current", 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEOperation(getPerson__GetName(), theEcorePackage.getEString(), "getName", 0, 1, !IS_UNIQUE, IS_ORDERED);
+    initEAttribute(getPerson_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Person.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
     initEClass(patientEClass, Patient.class, "Patient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPatient_Weight(), theEcorePackage.getEDoubleObject(), "weight", null, 0, 1, Patient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1176,7 +1175,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
        new String[] 
        {
        "appinfo", "@GenericGenerator(name=\"system-uuid\", strategy = \"uuid2\")"
-       });				
+       });			
     addAnnotation
       (getPerson_LastName(), 
        source, 
@@ -1190,7 +1189,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
        new String[] 
        {
        "appinfo", "@Id \n@GeneratedValue(generator=\"system-uuid\")\n"
-       });																					
+       });																						
     addAnnotation
       (getClinicalDecision_DecisionID(), 
        source, 

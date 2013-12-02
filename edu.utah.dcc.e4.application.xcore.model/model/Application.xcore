@@ -15,8 +15,9 @@ class Person {
 	id String personID
 	@GenModel(documentation="Status of the person record.")
 	StatusType status = "Current"
-	@GenModel(body="return getLastName().trim() + \", \" + getFirstName().trim();")
-	op String getName()
+	derived String name get {
+		lastName.trim() + ", " + firstName.trim() 
+	}
 } 
 
 @GenModel(documentation="Patient object represents a patient in the intensive care unit.")
