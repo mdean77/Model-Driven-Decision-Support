@@ -12,7 +12,6 @@ Export-Package: glucose,
  glucose.impl,
  glucose.presentation,
  glucose.provider,
- glucose.tests,
  glucose.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

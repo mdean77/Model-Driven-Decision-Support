@@ -1,6 +1,6 @@
 //@Ecore(nsPrefix="edu.utah.dcc.e4", nsURI="http://edu/utah/dcc/e4/glucose/xcore/model")
 //@TeneoJpa(appinfo="@GenericGenerator(name=\"system-uuid\", strategy = \"uuid2\")")
-@GenModel(modelDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src-gen", importerID="org.eclipse.emf.importer.ecore", editorDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src-gen", editDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src-gen", testsDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src-gen", providerRootExtendsClass="", tableProviders="true")
+@GenModel(modelDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src", importerID="org.eclipse.emf.importer.ecore", editorDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src", editDirectory="/edu.utah.dcc.e4.glucose.xcore.model/src", testsDirectory="/edu.utah.dcc.e4.glucose.xcore.model.tests/src", providerRootExtendsClass="", tableProviders="true")
 package glucose
 
 import application.ClinicalDecision
