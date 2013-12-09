@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Interface Core
+Bundle-SymbolicName: edu.utah.dcc.e4.application.ui.core
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.jface
+Import-Package: javax.annotation;version="1.1.0",
+ javax.inject;version="1.0.0"
+Export-Package: edu.utah.e4.ui.core.parts
