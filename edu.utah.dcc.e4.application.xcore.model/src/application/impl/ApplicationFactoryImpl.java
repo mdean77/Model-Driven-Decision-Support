@@ -68,7 +68,6 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
   {
     switch (eClass.getClassifierID())
     {
-      case ApplicationPackage.PERSON: return createPerson();
       case ApplicationPackage.PATIENT: return createPatient();
       case ApplicationPackage.USER: return createUser();
       case ApplicationPackage.CLINICAL_DECISION: return createClinicalDecision();
@@ -128,17 +127,6 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Person createPerson()
-  {
-    PersonImpl person = new PersonImpl();
-    return person;
   }
 
   /**

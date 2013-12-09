@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see application.ApplicationPackage#getPerson()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Person extends EObject

@@ -76,31 +76,6 @@ public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFac
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link application.Person} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected PersonItemProvider personItemProvider;
-
-  /**
-   * This creates an adapter for a {@link application.Person}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createPersonAdapter()
-  {
-    if (personItemProvider == null)
-    {
-      personItemProvider = new PersonItemProvider(this);
-    }
-
-    return personItemProvider;
-  }
-
-  /**
    * This keeps track of the one adapter used for all {@link application.Patient} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -361,7 +336,6 @@ public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFac
    */
   public void dispose()
   {
-    if (personItemProvider != null) personItemProvider.dispose();
     if (patientItemProvider != null) patientItemProvider.dispose();
     if (userItemProvider != null) userItemProvider.dispose();
     if (clinicalDecisionItemProvider != null) clinicalDecisionItemProvider.dispose();

@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class PersonImpl extends MinimalEObjectImpl.Container implements Person
+public abstract class PersonImpl extends MinimalEObjectImpl.Container implements Person
 {
   /**
    * The default value of the '{@link #getLastName() <em>Last Name</em>}' attribute.

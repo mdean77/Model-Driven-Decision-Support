@@ -8,11 +8,11 @@ import java.text.DateFormat
 annotation "teneo.jpa" as TeneoJpa 
 @GenModel(documentation="Person entity is used as a base class for patients and users.")
 
-class Person {
+abstract class Person {
 
 	//@TeneoJpa(appinfo="@Table(uniqueConstraints={@UniqueConstraint(columnNames={"LASTNAME" "FIRSTNAME" "STATUS"})})")
 	//@TeneoJpa(appinfo="@UniqueConstraint(columnNames={"lastName", "firstName", "status"})")
-
+	//@TeneoJpa(appinfo="@Table(uniqueConstraints=@UniqueConstraint(columnNames={"LASTNAME", "FIRSTNAME","STATUS"}))")
 	@TeneoJpa(appinfo="@Basic(optional=false) @Column(name=LASTNAME)")
 	String lastName = ""
 	@TeneoJpa(appinfo="@Basic(optional=false) @Column(name=FIRSTNAME)")
