@@ -5,7 +5,6 @@ package edu.utah.dcc.e4.glucose.parts;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -25,7 +24,7 @@ import org.eclipse.swt.widgets.DateTime;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
-import edu.utah.e4.ui.core.parts.DecisionFieldsAddedComposite;
+import edu.utah.dcc.e4.ui.core.parts.DecisionFieldsAddedComposite;
 
 //import activator.Activator;
 
@@ -55,10 +54,12 @@ public class GlucoseFieldsAddedToDomainComposite extends DecisionFieldsAddedComp
 	@Inject
 	public GlucoseFieldsAddedToDomainComposite(Composite parent) {
 		super(parent);
+		System.out.println("In constructor of glucose fields editor");
+		createGlucoseComposite(parent);
 	}
 	
-	@PostConstruct
-	private void createControls(Composite parent){
+
+	private void createGlucoseComposite(Composite parent){
 		GridLayout gridLayout = (GridLayout) domainFieldsComposite.getLayout();
 		gridLayout.makeColumnsEqualWidth = false;
 		createDateTimeRefreshButton();
