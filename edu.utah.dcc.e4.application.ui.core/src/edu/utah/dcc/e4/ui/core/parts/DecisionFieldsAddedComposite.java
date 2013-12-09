@@ -25,14 +25,21 @@ public class DecisionFieldsAddedComposite extends DecisionCompositeButtonsOnly /
 	public Composite domainFieldsComposite;
 
 
+//	public DecisionFieldsAddedComposite(Composite parent) {
+//		super(parent);
+//		System.out.println("In construct of decision fields only editor");
+//		makeDecisionComposite(parent);
+//	}
+
+
 	public DecisionFieldsAddedComposite(Composite parent) {
 		super(parent);
-		System.out.println("In construct of decision fields only editor");
-		makeDecisionComposite(parent);
 	}
 
 
-	private void makeDecisionComposite(Composite parent) {
+
+	protected void createControls(Composite parent) {
+		super.createControls(parent);
 		createDomainFieldsComposite(parent);
 		createDecisionComposite(parent);
 		createDecisionGroup();

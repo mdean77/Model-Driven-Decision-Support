@@ -18,15 +18,19 @@ public class DecisionCompositeButtonsOnly {
 	private Composite buttonComposite;
 
 
-	public DecisionCompositeButtonsOnly(Composite parent){
-		System.out.println("In Decision Composite Buttons Only Constructor");
-		createButtonsComposite(parent);
-	}
+//	public DecisionCompositeButtonsOnly(Composite parent){
+//		System.out.println("In Decision Composite Buttons Only Constructor");
+//		createButtonsComposite(parent);
+//	}
 	
 	//TODO Fix the logic for enabling the buttons
 	//If all required fields are filled in, 
 
-	private void createButtonsComposite(Composite parent) {
+	 public DecisionCompositeButtonsOnly(Composite parent) {
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void createControls(Composite parent) {
 		parent.setLayout(new FormLayout());
 		parent.setBackground(SWTResourceManager.getColor( 169, 173, 240));
 		makeDecisionButtonComposite(parent);
