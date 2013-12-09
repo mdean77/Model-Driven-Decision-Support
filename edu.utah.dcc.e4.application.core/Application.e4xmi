@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_vAlqEFkxEeOQbddWuhlLtQ" elementId="edu.utah.dcc.e4.application.core.application">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_2iJ-EFkxEeOQbddWuhlLtQ" elementId="edu.utah.dcc.e4.application.core.trimmedwindow.main" label="" x="0" y="0" width="1200" height="800">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_ySM3oF7KEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.perspectiveStack">
+      <children xsi:type="advanced:Perspective" xmi:id="_19D_0F7KEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.perspective.normal" label="Normal User Perspective">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_mah3AGAzEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partsashcontainer.0" containerData="" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_eHSZAGA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partsashcontainer.2" containerData="2500">
+            <children xsi:type="advanced:Placeholder" xmi:id="_iq6VMGA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.placeholder.0" containerData="5000" ref="_sheAEGAzEeOWo7ySidneMA"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_jRGygGA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.placeholder.1" containerData="5000" ref="_VtPk4GA0EeOWo7ySidneMA"/>
+          </children>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_nEQwgGAzEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partsashcontainer.1" containerData="7500">
+            <children xsi:type="advanced:Placeholder" xmi:id="_UKwMgGA2EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.placeholder.5" containerData="7000" ref="_PaQ5MGBbEeOXMIwN3j3CfQ"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_dy56EGBYEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.placeholder.tables" containerData="3000" ref="_iCrloGA2EeOWo7ySidneMA"/>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="advanced:Perspective" xmi:id="_2dcwEF7KEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.perspective.admin" label="Administrative Perspective">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_m5CigGA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partsashcontainer.3" containerData="" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_no0ZoGA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partsashcontainer.4" containerData="2500">
+            <children xsi:type="advanced:Placeholder" xmi:id="_YAFUwGA1EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.placeholder.2" containerData="3500" ref="_sheAEGAzEeOWo7ySidneMA"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_YmXRoGA1EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.placeholder.3" containerData="3500" ref="_WVIrUGA0EeOWo7ySidneMA"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_ZWqGIGA1EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.placeholder.4" containerData="3500" ref="_VtPk4GA0EeOWo7ySidneMA"/>
+          </children>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_olSo8GA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partsashcontainer.5" containerData="7500">
+            <children xsi:type="advanced:Placeholder" xmi:id="_f8Hz4GBZEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.placeholder.6" containerData="7000" ref="_PaQ5MGBbEeOXMIwN3j3CfQ"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_gk5EEGBZEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.placeholder.7" containerData="3000" ref="_iCrloGA2EeOWo7ySidneMA"/>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="advanced:Perspective" xmi:id="_3PG2gF7KEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.perspective.superuser" label="Superuser Perspective">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_Yd0Z0GBaEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.partsashcontainer.30" containerData="" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_Yd0Z0WBaEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.partsashcontainer.40" containerData="2500">
+            <children xsi:type="advanced:Placeholder" xmi:id="_Yd0Z0mBaEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.placeholder.20" containerData="3500" ref="_sheAEGAzEeOWo7ySidneMA"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_Yd0Z02BaEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.placeholder.30" containerData="3500" ref="_WVIrUGA0EeOWo7ySidneMA"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_Yd0Z1GBaEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.placeholder.40" containerData="3500" ref="_VtPk4GA0EeOWo7ySidneMA"/>
+          </children>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_Yd0Z1WBaEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.partsashcontainer.50" containerData="7500">
+            <children xsi:type="advanced:Placeholder" xmi:id="_Yd0Z1mBaEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.placeholder.60" containerData="7000" ref="_PaQ5MGBbEeOXMIwN3j3CfQ"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_Yd0Z12BaEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.placeholder.7" containerData="3000" ref="_iCrloGA2EeOWo7ySidneMA"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_17ZIsF7GEeOWo7ySidneMA" elementId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_3P_YUF9vEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.menu.edit" label="Edit">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_7X7eEF9vEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.selectActivePatient" label="Select active patient" command="_VlWlgF92EeOWo7ySidneMA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_75M_IF9vEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.updatePatient" label="Update (edit) patient data" command="_YgzqAF92EeOWo7ySidneMA"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_kWRD0F9wEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.menu.decision" label="Decision">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_p35gYF9wEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.showTraceWindow" label="Show trace window" command="_Zo4sYF92EeOWo7ySidneMA"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_pEIEoF9xEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.menu.database" label="Database">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_9z5X8F90EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.addUser" label="Add user" command="_agDk8F92EeOWo7ySidneMA"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_ABKgwF91EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.menuseparator.0"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_611LsF9xEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.initializeLocalDatabase" label="Initialize local database (Destructive!)" command="_a9H7cF92EeOWo7ySidneMA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_AMS6EF9yEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.addFakePatients" label="Add fake patients" command="_baTmsF92EeOWo7ySidneMA"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_AlANoF91EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.menuseparator.1"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_LEiuoF91EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.transferDataToTargetDatabase" label="Transfer data to target database" command="_b6Xm0F92EeOWo7ySidneMA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_LpOwEF91EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.initializeTargetDatabase" label="Initialize target database (destructive!)" command="_-ybx4F92EeOWo7ySidneMA"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_16ZPoF91EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.menu.changePerspective" label="Perspective">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_7FIPIF91EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.toNormalPerspective" label="Normal user perspective" command="__JzwEF92EeOWo7ySidneMA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_7mhsAF91EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.toAdminPerspective" label="Administrative user perspective" command="__gOsAF92EeOWo7ySidneMA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_8akYEF91EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handledmenuitem.toSuperuserPerspective" label="Superuser perspective" command="_JQxZAF93EeOWo7ySidneMA"/>
+      </children>
+    </mainMenu>
+    <sharedElements xsi:type="basic:PartStack" xmi:id="_sheAEGAzEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partstack.activePatient">
+      <children xsi:type="basic:Part" xmi:id="_uBZhwGAzEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.part.activePatient" label="Active Patient"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:PartStack" xmi:id="_VtPk4GA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partstack.timeClock">
+      <children xsi:type="basic:Part" xmi:id="_W9zN0GA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.part.timeClock" label="Time to next measurement"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:PartStack" xmi:id="_WVIrUGA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partstack.properties">
+      <children xsi:type="basic:Part" xmi:id="_8cO-MGA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.part.properties" label="Properties"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:PartStack" xmi:id="_iCrloGA2EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partstack.tables"/>
+    <sharedElements xsi:type="basic:PartStack" xmi:id="_PaQ5MGBbEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.partstack.decision"/>
+  </children>
+  <handlers xmi:id="_5QA2sF9sEeOWo7ySidneMA" elementId="" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.QuitHandler" command="_0TbA4F9sEeOWo7ySidneMA"/>
+  <handlers xmi:id="_-v0xgF9wEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.0" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.AboutHandler" command="_73aZ8F9wEeOWo7ySidneMA"/>
+  <handlers xmi:id="_BD6dkF99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.selectPatient" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.SelectPatientHandler" command="_VlWlgF92EeOWo7ySidneMA"/>
+  <handlers xmi:id="_BgAjsF99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.editPatient" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.EditPatientHandler" command="_YgzqAF92EeOWo7ySidneMA"/>
+  <handlers xmi:id="_CjPiUF99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.showTraceWindow" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.ShowTraceWindowHandler" command="_Zo4sYF92EeOWo7ySidneMA"/>
+  <handlers xmi:id="_D0Mz4F99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.addUser" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.AddUserHandler" command="_agDk8F92EeOWo7ySidneMA"/>
+  <handlers xmi:id="_EPOjAF99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.initializeLocalDatabase" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.InitializeLocalDatabaseHandler" command="_a9H7cF92EeOWo7ySidneMA"/>
+  <handlers xmi:id="_EsMy4F99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.addFakePatients" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.AddFakePatientsHandler" command="_baTmsF92EeOWo7ySidneMA"/>
+  <handlers xmi:id="_FFEl4F99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.transferDataToTarget" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.TransferDataToTargetHandler" command="_b6Xm0F92EeOWo7ySidneMA"/>
+  <handlers xmi:id="_FgqVsF99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.initializeTargetDatabase" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.InitializeTargetDatabaseHandler" command="_-ybx4F92EeOWo7ySidneMA"/>
+  <handlers xmi:id="_-XHv0GAvEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.normalUserPerspective" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.NormalUserPerspectiveHandler" command="__JzwEF92EeOWo7ySidneMA"/>
+  <handlers xmi:id="_-wcOwGAvEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.adminUserPerspective" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.AdminUserPerspectiveHandler" command="__gOsAF92EeOWo7ySidneMA"/>
+  <handlers xmi:id="__KnpUGAvEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.superuserPerspective" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.SuperuserPerspectiveHandler" command="_JQxZAF93EeOWo7ySidneMA"/>
+  <commands xmi:id="_0TbA4F9sEeOWo7ySidneMA" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_73aZ8F9wEeOWo7ySidneMA" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="_VlWlgF92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.selectPatient" commandName="selectPatientCommand"/>
+  <commands xmi:id="_YgzqAF92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.editPatient" commandName="editPatientCommand"/>
+  <commands xmi:id="_Zo4sYF92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.showTraceWindow" commandName="showTraceWindowCommand"/>
+  <commands xmi:id="_agDk8F92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.addUser" commandName="addUserCommand"/>
+  <commands xmi:id="_a9H7cF92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.initializeLocalDatabase" commandName="initializeLocalDatabaseCommand"/>
+  <commands xmi:id="_baTmsF92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.addFakePatient" commandName="addFakePatientsCommand"/>
+  <commands xmi:id="_b6Xm0F92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.transferDataToTarget" commandName="transferDataToTargetCommand"/>
+  <commands xmi:id="_-ybx4F92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.initializeTargetDatabase" commandName="initializeTargetDatabaseCommand" description="Command to destroy and re-initialize target database.  Destructive!"/>
+  <commands xmi:id="__JzwEF92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.normalUserPerspective" commandName="normalUserPerspectiveCommand"/>
+  <commands xmi:id="__gOsAF92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.adminUserPerspective" commandName="adminUserPerspectiveCommand"/>
+  <commands xmi:id="_JQxZAF93EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.superuserPerspective" commandName="superuserPerspectiveCommand"/>
+  <addons xmi:id="_vAlqEVkxEeOQbddWuhlLtQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_vAlqElkxEeOQbddWuhlLtQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_vAlqE1kxEeOQbddWuhlLtQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_vAlqFFkxEeOQbddWuhlLtQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_vAlqFVkxEeOQbddWuhlLtQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_vAmRIFkxEeOQbddWuhlLtQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_vAmRIVkxEeOQbddWuhlLtQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+</application:Application>
