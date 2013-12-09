@@ -11,7 +11,6 @@
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
-
    <launcher name="Glucose Application">
       <solaris/>
       <win useIco="false">
