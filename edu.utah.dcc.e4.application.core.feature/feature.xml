@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="edu.utah.dcc.e4.application.core.feature"
-      label="Generic Application Feature"
-      version="1.0.0.qualifier"
-      provider-name="J. Michael Dean">
+      label="Core Generic Feature"
+      version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -21,7 +20,6 @@
          id="edu.utah.dcc.e4.application.core"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>
