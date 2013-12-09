@@ -27,4 +27,11 @@
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="edu.utah.dcc.e4.application.ui.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>
