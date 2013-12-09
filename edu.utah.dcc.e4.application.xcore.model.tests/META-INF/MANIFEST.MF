@@ -12,5 +12,11 @@ Require-Bundle: org.junit,
  org.eclipse.core.runtime,
  edu.utah.dcc.e4.application.xcore.model;bundle-version="0.1.0",
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.xmi;visibility:=reexport
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.teneo,
+ org.eclipse.emf.teneo.hibernate,
+ org.hibernate,
+ org.hsqldb,
+ edu.utah.dcc.e4.glucose.xcore.model,
+ com.mysql.jdbc;bundle-version="5.1.11"
 Bundle-ActivationPolicy: lazy
