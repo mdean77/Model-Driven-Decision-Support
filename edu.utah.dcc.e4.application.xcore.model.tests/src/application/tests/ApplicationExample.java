@@ -4,23 +4,16 @@ package application.tests;
 
 import application.ApplicationFactory;
 import application.ApplicationPackage;
-import application.Person;
-
+import application.Patient;
 import java.io.File;
 import java.io.IOException;
-
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
-
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
@@ -64,7 +57,7 @@ public class ApplicationExample
       try
       {
         Resource resource = resourceSet.createResource(URI.createURI("http:///My.application"));
-        Person root = ApplicationFactory.eINSTANCE.createPerson();
+        Patient root = ApplicationFactory.eINSTANCE.createPatient();
         resource.getContents().add(root);
         resource.save(System.out, null);
       }

@@ -33,7 +33,6 @@ public class ApplicationTests extends TestSuite
   public static Test suite()
   {
     TestSuite suite = new ApplicationTests("application Tests");
-    suite.addTestSuite(PersonTest.class);
     suite.addTestSuite(PatientTest.class);
     suite.addTestSuite(UserTest.class);
     suite.addTestSuite(ClinicalDecisionTest.class);

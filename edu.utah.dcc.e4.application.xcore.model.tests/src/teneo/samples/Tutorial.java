@@ -286,8 +286,6 @@ public class Tutorial {
 	private static void addFakeData() {
 
 		// Create the objects
-		Person person = ApplicationFactory.eINSTANCE.createPerson();
-		System.out.println(person);
 		Patient patient1 = ApplicationFactory.eINSTANCE.createPatient();
 		picu.getPatients().add(patient1);
 		User user1 = ApplicationFactory.eINSTANCE.createUser();
