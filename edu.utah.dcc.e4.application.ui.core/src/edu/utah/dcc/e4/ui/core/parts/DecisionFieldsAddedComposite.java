@@ -1,6 +1,5 @@
-package edu.utah.e4.ui.core.parts;
+package edu.utah.dcc.e4.ui.core.parts;
 
-import javax.inject.Inject;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.SashForm;
 import org.eclipse.swt.custom.StyledText;
@@ -10,6 +9,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
+
 import com.swtdesigner.SWTResourceManager;
 
 
@@ -24,13 +24,14 @@ public class DecisionFieldsAddedComposite extends DecisionCompositeButtonsOnly /
 	//private Boolean decisionFiredFlag;
 	public Composite domainFieldsComposite;
 
-	@Inject
+
 	public DecisionFieldsAddedComposite(Composite parent) {
-		super();
+		super(parent);
+		System.out.println("In construct of decision fields only editor");
 		makeDecisionComposite(parent);
 	}
 
-	//@PostConstruct
+
 	private void makeDecisionComposite(Composite parent) {
 		createDomainFieldsComposite(parent);
 		createDecisionComposite(parent);

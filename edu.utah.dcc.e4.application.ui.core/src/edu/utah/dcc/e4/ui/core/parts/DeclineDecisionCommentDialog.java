@@ -1,4 +1,4 @@
-package edu.utah.e4.ui.core.parts;
+package edu.utah.dcc.e4.ui.core.parts;
 
 
 import javax.annotation.PostConstruct;

@@ -1,13 +1,12 @@
-package edu.utah.e4.ui.core.parts;
+package edu.utah.dcc.e4.ui.core.parts;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+
 import com.swtdesigner.SWTResourceManager;
 
 public class DecisionCompositeButtonsOnly {
@@ -18,16 +17,16 @@ public class DecisionCompositeButtonsOnly {
 	private Button decisionButton;
 	private Composite buttonComposite;
 
-//	@Inject
-//	public DecisionCompositeButtonsOnly(){
-//		System.out.println("In Decision Composite Buttons Only Constructor");
-//	}
+
+	public DecisionCompositeButtonsOnly(Composite parent){
+		System.out.println("In Decision Composite Buttons Only Constructor");
+		createButtonsComposite(parent);
+	}
 	
 	//TODO Fix the logic for enabling the buttons
 	//If all required fields are filled in, 
-	@PostConstruct
-	public void createComposite(Composite parent) {
-		
+
+	private void createButtonsComposite(Composite parent) {
 		parent.setLayout(new FormLayout());
 		parent.setBackground(SWTResourceManager.getColor( 169, 173, 240));
 		makeDecisionButtonComposite(parent);
