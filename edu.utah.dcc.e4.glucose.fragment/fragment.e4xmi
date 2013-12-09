@@ -3,4 +3,10 @@
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_G0HXMGBlEeOXMIwN3j3CfQ" featurename="children" parentElementId="edu.utah.dcc.e4.application.core.partstack.decision">
     <elements xsi:type="basic:Part" xmi:id="_aOg6YGBlEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.glucose.fragment.part.glucoseDecision" contributionURI="bundleclass://edu.utah.dcc.e4.glucose.fragment/edu.utah.dcc.e4.glucose.parts.GlucoseFieldsAddedToDomainComposite" label="Glucose Decision"/>
   </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_YMz2AGDhEeORBeVTWxENjw" featurename="children" parentElementId="edu.utah.dcc.e4.application.core.partstack.tables">
+    <elements xsi:type="basic:Part" xmi:id="_hdYpgGDhEeORBeVTWxENjw" elementId="edu.utah.dcc.e4.glucose.fragment.part.decisionTable" label="Decision Table"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_oHSVsGDhEeORBeVTWxENjw" featurename="children" parentElementId="edu.utah.dcc.e4.application.core.partstack.tables">
+    <elements xsi:type="basic:Part" xmi:id="_pGnEsGDhEeORBeVTWxENjw" elementId="edu.utah.dcc.e4.glucose.fragment.part.ruleTraceWindow" label="Rule Trace"/>
+  </fragments>
 </fragment:ModelFragments>

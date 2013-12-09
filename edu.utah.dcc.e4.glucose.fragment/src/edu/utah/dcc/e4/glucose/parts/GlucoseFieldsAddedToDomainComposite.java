@@ -7,6 +7,7 @@ import java.util.GregorianCalendar;
 
 import javax.inject.Inject;
 
+import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -59,7 +60,8 @@ public class GlucoseFieldsAddedToDomainComposite extends DecisionFieldsAddedComp
 	}
 	
 
-	private void createGlucoseComposite(Composite parent){
+	protected void createGlucoseComposite(Composite parent){
+		super.createControls(parent);
 		GridLayout gridLayout = (GridLayout) domainFieldsComposite.getLayout();
 		gridLayout.makeColumnsEqualWidth = false;
 		createDateTimeRefreshButton();
@@ -313,6 +315,11 @@ public class GlucoseFieldsAddedToDomainComposite extends DecisionFieldsAddedComp
 		return obsTimeWidget;
 	}
 
+	@Focus
+	private void setFocus(){
+		currentGlucoseText.setFocus();
+	}
+	
 	private boolean checkDateAgainstBirth() {
 		// TODO Create this routine and check all dates against the
 		// patient birthdate to make sure everything happens after
