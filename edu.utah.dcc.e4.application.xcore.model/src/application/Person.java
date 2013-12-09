@@ -43,7 +43,7 @@ public interface Person extends EObject
    * @see #setLastName(String)
    * @see application.ApplicationPackage#getPerson_LastName()
    * @model default="" unique="false"
-   *        annotation="teneo.jpa appinfo='@Basic(optional=false)'"
+   *        annotation="teneo.jpa appinfo='@Basic(optional=false) @Column(name=LASTNAME)'"
    * @generated
    */
   String getLastName();
@@ -71,6 +71,7 @@ public interface Person extends EObject
    * @see #setFirstName(String)
    * @see application.ApplicationPackage#getPerson_FirstName()
    * @model default="" unique="false"
+   *        annotation="teneo.jpa appinfo='@Basic(optional=false) @Column(name=FIRSTNAME)'"
    * @generated
    */
   String getFirstName();
@@ -126,6 +127,7 @@ public interface Person extends EObject
    * @see #setStatus(StatusType)
    * @see application.ApplicationPackage#getPerson_Status()
    * @model default="Current" unique="false"
+   *        annotation="teneo.jpa appinfo='@Basic(optional=false) @Column(name=STATUS)'"
    * @generated
    */
   StatusType getStatus();

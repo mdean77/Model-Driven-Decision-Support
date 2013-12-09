@@ -3,43 +3,50 @@
 @GenModel(modelDirectory="/edu.utah.dcc.e4.application.xcore.model/src", importerID="org.eclipse.emf.importer.ecore", editorDirectory="/edu.utah.dcc.e4.application.xcore.model/src", editDirectory="/edu.utah.dcc.e4.application.xcore.model/src", testsDirectory="/edu.utah.dcc.e4.application.xcore.model.tests/src", providerRootExtendsClass="", tableProviders="true")
 package application
 
-import java.text.DateFormat
+import java.text.DateFormat 
 
+annotation "teneo.jpa" as TeneoJpa 
+@GenModel(documentation="Person entity is used as a base class for patients and users.")
 
-annotation "teneo.jpa" as TeneoJpa @GenModel(documentation="Person entity is used as a base class for patients and users.")
 class Person {
-	@TeneoJpa(appinfo="@Basic(optional=false)")
+
+	//@TeneoJpa(appinfo="@Table(uniqueConstraints={@UniqueConstraint(columnNames={"LASTNAME" "FIRSTNAME" "STATUS"})})")
+	//@TeneoJpa(appinfo="@UniqueConstraint(columnNames={"lastName", "firstName", "status"})")
+
+	@TeneoJpa(appinfo="@Basic(optional=false) @Column(name=LASTNAME)")
 	String lastName = ""
-	String firstName = "" 
+	@TeneoJpa(appinfo="@Basic(optional=false) @Column(name=FIRSTNAME)")
+	String firstName = ""
 	@TeneoJpa(appinfo="@Id \n@GeneratedValue(generator=\"system-uuid\")\n")
-	id String personID
+	id String personID 
 	@GenModel(documentation="Status of the person record.")
-	StatusType status = "Current"
+	@TeneoJpa(appinfo="@Basic(optional=false) @Column(name=STATUS)")
+	StatusType status = "Current" 
 	derived String name get {
-		lastName.trim() + ", " + firstName.trim() 
+		lastName.trim() + ", " + firstName.trim()
 	}
-} 
+}
 
 @GenModel(documentation="Patient object represents a patient in the intensive care unit.")
 class Patient extends Person {
 	@GenModel(documentation="Weight is measured in kilograms.")
 	Double weight
 	@GenModel(documentation="Medical record number should be the hospital medical record number, not the visit account record.")
-	String medRecNum 
+	String medRecNum
 	@GenModel(documentation="This is the ID used in the specific study in which the patient is enrolled.")
 	String studyID
 	@GenModel(documentation="Date of birth of patient.")
-	calendar birthdate 
+	calendar birthdate
 	@GenModel(documentation="Height of the patient, measured in centimeters.")
-	Double height  
+	Double height
 	contains ClinicalDecision[] decisions opposite patient keys observationDate , userAction
 	contains LaboratoryTest[] labTests opposite patient
-	refers User createdBy 
+	refers User createdBy
 	derived String birthDateString get {
 		if (birthdate != null) {
 			DateFormat.getDateInstance(DateFormat.LONG).format(birthdate.getTime());
 		}
-	}  
+	}
 	op long getDeltaAgeDays(calendar date) {
 		if (birthdate != null)
 			Math.abs(birthdate.getTimeInMillis() - date.getTimeInMillis()) / (1000 * 60 * 60 * 24)
@@ -51,7 +58,7 @@ class Patient extends Person {
 
 @GenModel(documentation="This is a clinical user of the software, generally a nurse or physician.")
 class User extends Person {
-	AccessType accountRights = "Normal" 
+	AccessType accountRights = "Normal"
 	String accountName
 	String passwordDigest
 	refers User createdBy
@@ -78,6 +85,7 @@ enum StatusType {
 }
 
 type calendar wraps java.util.Calendar
+
 type gregorian wraps java.util.GregorianCalendar
 
 class ClinicalDecision {
@@ -98,9 +106,11 @@ class ClinicalDecision {
 	@TeneoJpa(appinfo="@Id \n@GeneratedValue(generator=\"system-uuid\")")
 	id String decisionID
 	StatusType status = "Current"
-	op void advise(String message){
+	op void advise(String message) {
 		if (adviceText.length() == 0)
-		adviceText = message else adviceText = adviceText + message
+			adviceText = message
+		else
+			adviceText = adviceText + message
 	}
 	container Patient[1] patient opposite decisions
 }
@@ -132,7 +142,6 @@ enum UserActionType {
 //	@GenModel(documentation="Adult or pediatric, determines how dose recommendations are displayed.")
 //	String insulinMode
 //}
-
 class IntensiveCareUnit {
 	@TeneoJpa(appinfo="@Id \n@GeneratedValue(generator=\"system-uuid\")")
 	id String icuID
@@ -147,7 +156,6 @@ class IntensiveCareUnit {
 //	decreased as "Decreased or stopped" = 1
 //	increased as "Increased or started" = 2
 //}
-
 @GenModel(documentation="Laboratory test entity, contains 1 or more TestResult objects.")
 class LaboratoryTest {
 	@TeneoJpa(appinfo="@Id \n@GeneratedValue(generator=\"system-uuid\")")

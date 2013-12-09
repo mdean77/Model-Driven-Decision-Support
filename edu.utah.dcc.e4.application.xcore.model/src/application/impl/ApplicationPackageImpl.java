@@ -1157,7 +1157,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
        new String[] 
        {
        "TeneoJpa", "teneo.jpa"
-       });																																					
+       });																																							
   }
 
   /**
@@ -1181,7 +1181,14 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
        source, 
        new String[] 
        {
-       "appinfo", "@Basic(optional=false)"
+       "appinfo", "@Basic(optional=false) @Column(name=LASTNAME)"
+       });		
+    addAnnotation
+      (getPerson_FirstName(), 
+       source, 
+       new String[] 
+       {
+       "appinfo", "@Basic(optional=false) @Column(name=FIRSTNAME)"
        });		
     addAnnotation
       (getPerson_PersonID(), 
@@ -1189,7 +1196,14 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
        new String[] 
        {
        "appinfo", "@Id \n@GeneratedValue(generator=\"system-uuid\")\n"
-       });																						
+       });			
+    addAnnotation
+      (getPerson_Status(), 
+       source, 
+       new String[] 
+       {
+       "appinfo", "@Basic(optional=false) @Column(name=STATUS)"
+       });																					
     addAnnotation
       (getClinicalDecision_DecisionID(), 
        source, 
