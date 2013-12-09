@@ -21,14 +21,14 @@
          version="0.0.0"/>
 
    <plugin
-         id="edu.utah.dcc.e4.glucose.fragment"
+         id="edu.utah.dcc.e4.application.ui.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="edu.utah.dcc.e4.application.ui.core"
+         id="edu.utah.dcc.e4.glucose.fragment"
          download-size="0"
          install-size="0"
          version="0.0.0"
