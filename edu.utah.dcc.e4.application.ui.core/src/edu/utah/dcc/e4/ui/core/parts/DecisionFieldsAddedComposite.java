@@ -1,16 +1,18 @@
 package edu.utah.dcc.e4.ui.core.parts;
 
+import org.eclipse.jface.resource.FontDescriptor;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.resource.LocalResourceManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.SashForm;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-
-import com.swtdesigner.SWTResourceManager;
 
 
 public class DecisionFieldsAddedComposite extends DecisionCompositeButtonsOnly //implements IDecisionListener 
@@ -21,6 +23,8 @@ public class DecisionFieldsAddedComposite extends DecisionCompositeButtonsOnly /
 	private StyledText decisionText;
 	private Group explainGroup;
 	private StyledText explanationText;
+	private LocalResourceManager resManager;
+	private Font font;
 	//private Boolean decisionFiredFlag;
 	public Composite domainFieldsComposite;
 
@@ -40,6 +44,8 @@ public class DecisionFieldsAddedComposite extends DecisionCompositeButtonsOnly /
 
 	protected void createControls(Composite parent) {
 		super.createControls(parent);
+		resManager = new LocalResourceManager(JFaceResources.getResources(), parent);
+		font = resManager.createFont(FontDescriptor.createFrom("Lucida Grande", 13, SWT.NORMAL));
 		createDomainFieldsComposite(parent);
 		createDecisionComposite(parent);
 		createDecisionGroup();
@@ -123,7 +129,7 @@ public class DecisionFieldsAddedComposite extends DecisionCompositeButtonsOnly /
 
 	private void createDecisionText() {
 		decisionText = new StyledText(decisionGroup, SWT.MULTI | SWT.WRAP | SWT.V_SCROLL | SWT.BORDER);
-		decisionText.setFont(SWTResourceManager.getFont("Lucida Grande", 13, SWT.NORMAL));
+		decisionText.setFont(font);
 		GridData decisionTextLData = new GridData();
 		decisionTextLData.grabExcessHorizontalSpace = true;
 		decisionTextLData.grabExcessVerticalSpace = true;
@@ -137,7 +143,7 @@ public class DecisionFieldsAddedComposite extends DecisionCompositeButtonsOnly /
 
 	private void createExplanationText() {
 		explanationText = new StyledText(explainGroup, SWT.MULTI | SWT.WRAP | SWT.V_SCROLL | SWT.BORDER);
-		explanationText.setFont(SWTResourceManager.getFont("Lucida Grande", 13, SWT.NORMAL));
+		explanationText.setFont(font);
 		GridData explanationTextLData = new GridData();
 		explanationTextLData.verticalAlignment = GridData.FILL;
 		explanationTextLData.horizontalAlignment = GridData.FILL;

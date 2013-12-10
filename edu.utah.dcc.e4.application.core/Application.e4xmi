@@ -65,7 +65,7 @@
       </children>
     </mainMenu>
     <sharedElements xsi:type="basic:PartStack" xmi:id="_sheAEGAzEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partstack.activePatient">
-      <children xsi:type="basic:Part" xmi:id="_uBZhwGAzEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.part.activePatient" label="Active Patient"/>
+      <children xsi:type="basic:Part" xmi:id="_uBZhwGAzEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.part.activePatient" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.patient.objects.PatientDemographicView" label="Active Patient"/>
     </sharedElements>
     <sharedElements xsi:type="basic:PartStack" xmi:id="_VtPk4GA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partstack.timeClock">
       <children xsi:type="basic:Part" xmi:id="_W9zN0GA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.part.timeClock" label="Time to next measurement"/>

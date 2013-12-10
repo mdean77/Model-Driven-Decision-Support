@@ -1,13 +1,14 @@
 package edu.utah.dcc.e4.ui.core.parts;
 
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.resource.LocalResourceManager;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-
-import com.swtdesigner.SWTResourceManager;
 
 public class DecisionCompositeButtonsOnly {
 
@@ -16,7 +17,7 @@ public class DecisionCompositeButtonsOnly {
 	private Button declineButton;
 	private Button decisionButton;
 	private Composite buttonComposite;
-
+	private LocalResourceManager resManager;
 
 //	public DecisionCompositeButtonsOnly(Composite parent){
 //		System.out.println("In Decision Composite Buttons Only Constructor");
@@ -32,7 +33,9 @@ public class DecisionCompositeButtonsOnly {
 
 	protected void createControls(Composite parent) {
 		parent.setLayout(new FormLayout());
-		parent.setBackground(SWTResourceManager.getColor( 169, 173, 240));
+		resManager = new LocalResourceManager(JFaceResources.getResources(), parent);
+		parent.setBackground(resManager.createColor(new RGB(169, 173, 240)));
+		//parent.setBackground(resManager.createColor(new RGB(255, 0, 0))); ALL RED!
 		makeDecisionButtonComposite(parent);
 		parent.layout();
 
@@ -43,6 +46,7 @@ public class DecisionCompositeButtonsOnly {
 	 * decision for selected patient
 	 */
 	private void makeDecisionButtonComposite(Composite parent) {
+		resManager = new LocalResourceManager(JFaceResources.getResources(), parent);
 		createButtonComposite(parent);
 		createCalculateDecisionButton();
 		createAcceptDecisionButton();
@@ -53,7 +57,8 @@ public class DecisionCompositeButtonsOnly {
 	private void createButtonComposite(Composite parent) {
 		buttonComposite = new Composite(parent, SWT.NONE);
 		setupButtonFormLayout();
-		buttonComposite.setBackground(SWTResourceManager.getColor(83, 102, 240));
+		//buttonComposite.setBackground(SWTResourceManager.getColor(83, 102, 240));
+		buttonComposite.setBackground(resManager.createColor(new RGB(83, 102, 240)));
 	}
 
 	private void setupButtonFormLayout() {
