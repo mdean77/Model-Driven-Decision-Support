@@ -16,6 +16,7 @@
 
 package teneo.samples;
 
+import java.sql.SQLException;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
@@ -30,6 +31,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Environment;
+import org.hsqldb.Server;
 
 import application.ApplicationFactory;
 import application.ApplicationPackage;
@@ -40,7 +42,6 @@ import application.Person;
 import application.StatusType;
 import application.User;
 
-
 /**
  * Quick Start Tutorial
  * 
@@ -50,7 +51,7 @@ import application.User;
 public class Tutorial {
 
 	private static IntensiveCareUnit picu;
-	//static org.hsqldb.server.Server server;
+	private static Server hsqlServer;
 
 	/** The main method */
 	public static void main(String[] args) {
@@ -73,14 +74,14 @@ public class Tutorial {
 		// hibernateProperties.load(in);
 		//
 		// 2) or populated manually:
-		 hibernateProperties.setProperty(Environment.DRIVER,
-		 "com.mysql.jdbc.Driver");
-		 hibernateProperties.setProperty(Environment.USER, "root");
-		 hibernateProperties.setProperty(Environment.URL,
-		 "jdbc:mysql://127.0.0.1:3306/decisions");
-		 hibernateProperties.setProperty(Environment.PASS, "root");
-		 hibernateProperties.setProperty(Environment.DIALECT,
-		 org.hibernate.dialect.MySQL5InnoDBDialect.class.getName());
+//		 hibernateProperties.setProperty(Environment.DRIVER,
+//		 "com.mysql.jdbc.Driver");
+//		 hibernateProperties.setProperty(Environment.USER, "root");
+//		 hibernateProperties.setProperty(Environment.URL,
+//		 "jdbc:mysql://127.0.0.1:3306/decisions");
+//		 hibernateProperties.setProperty(Environment.PASS, "root");
+//		 hibernateProperties.setProperty(Environment.DIALECT,
+//		 org.hibernate.dialect.MySQL5InnoDBDialect.class.getName());
 		 hibernateProperties.setProperty(Environment.HBM2DDL_AUTO, "create");
 		 hibernateProperties.setProperty(Environment.SHOW_SQL, "false");
 		 hibernateProperties.setProperty(Environment.FORMAT_SQL, "false");
@@ -102,12 +103,12 @@ public class Tutorial {
 		// org.hibernate.dialect.HSQLDialect.class.getName());
 
 //		// NEW properties from Mike Dean's original stuff - will not run if there is not already a running server!
-//		hibernateProperties.setProperty(Environment.DRIVER, "org.hsqldb.jdbcDriver");
-//		hibernateProperties.setProperty(Environment.USER, "sa");
-//		hibernateProperties.setProperty(Environment.URL, "jdbc:hsqldb:mem:library");
-//		//hibernateProperties.setProperty(Environment.URL, "jdbc:hsqldb:hsql://localhost:9001"); // main difference is here
-//		hibernateProperties.setProperty(Environment.PASS, "");
-//		hibernateProperties.setProperty(Environment.DIALECT, org.hibernate.dialect.HSQLDialect.class.getName());
+		hibernateProperties.setProperty(Environment.DRIVER, "org.hsqldb.jdbcDriver");
+		hibernateProperties.setProperty(Environment.USER, "sa");
+		//hibernateProperties.setProperty(Environment.URL, "jdbc:hsqldb:mem:library");
+		hibernateProperties.setProperty(Environment.URL, "jdbc:hsqldb:hsql://localhost/coreDecisions"); // main difference is here
+		hibernateProperties.setProperty(Environment.PASS, "");
+		hibernateProperties.setProperty(Environment.DIALECT, org.hibernate.dialect.HSQLDialect.class.getName());
 
 		// set a specific option
 		// see this page
@@ -124,10 +125,10 @@ public class Tutorial {
 		// hibernateProperties.setProperty(PersistenceOptions.PERSISTENCE_XML,
 		// "edu/utah/cdmcc/e4/glucose/model/examples/annotations.xml");
 
-		//startServer();
+		startServer();
 
 		// Create the DataStore.
-		final String dataStoreName = "GlucoseDataStore";
+		final String dataStoreName = "CoreDecisionDataStore";
 		final HbDataStore dataStore = HbHelper.INSTANCE.createRegisterDataStore(dataStoreName);
 		dataStore.setDataStoreProperties(hibernateProperties);
 
@@ -230,12 +231,12 @@ public class Tutorial {
 			session.getTransaction().commit();
 			session.close();
 			
-//			try {
-//				stopServer();
-//			} catch (SQLException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
+			try {
+				stopServer();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		//
@@ -335,14 +336,22 @@ public class Tutorial {
 		person.setLastName(last);
 	}
 
-//	public static void startServer() {
+	public static void startServer() {
+		hsqlServer = new Server();
+        hsqlServer.setDatabaseName(0, "coreDecisions");
+        hsqlServer.setDatabasePath(0, "coreDecisions");
+        hsqlServer.setTrace(false);
+        hsqlServer.setSilent(true);
+        hsqlServer.start();
 //		String[] args1 = { "-database", "glucoseData", "-port", String.valueOf(9001), "-no_system_exit", "true" };
 //		if (server == null) server = new Server();
 //		Server.main(args1);
 //		server.start();
-//	};
+		
+	};
 //	
-//	public static void stopServer() throws SQLException{
+	public static void stopServer() throws SQLException{
+			hsqlServer.stop();
 //		if (server != null){
 //			Connection con = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost:9001","sa","");
 //		String sql = "SHUTDOWN";
@@ -350,9 +359,8 @@ public class Tutorial {
 //		stmt.executeUpdate(sql);
 //		stmt.close();
 //		server = null;
-//		}
+		}
 	
 		
-//	}
+	}
 
-}
