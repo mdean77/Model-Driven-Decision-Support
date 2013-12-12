@@ -1,1 +1,10 @@
 /bin
+/coreDecisions.tmp
+/glucose.tmp
+/testdb.tmp
+/coreDecisions.log
+/coreDecisions.properties
+/coreDecisions.script
+/glucose.log
+/glucose.properties
+/glucose.script
