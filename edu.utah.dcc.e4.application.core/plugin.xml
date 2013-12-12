@@ -7,10 +7,14 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.e4.ui.workbench.swt.E4Application"
-            name="Glucose Application">
+            name="Generic Core Application">
          <property
                name="appName"
-               value="Glucose Application">
+               value="Generic Core Application">
+         </property>
+         <property
+               name="lifeCycleURI"
+               value="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.lifecycle.Manager">
          </property>
       </product>
    </extension>
