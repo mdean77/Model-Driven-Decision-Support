@@ -14,7 +14,8 @@
 
    <windowImages/>
 
-
+   <splash
+      location="edu.utah.dcc.e4.glucose.fragment" />
    <launcher name="Glucose Application">
       <solaris/>
       <win useIco="false">
