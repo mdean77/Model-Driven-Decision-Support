@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="edu.utah.dcc.e4.application.xcore.model.icu">
+   <implementation class="application.impl.IntensiveCareUnitImpl"/>
+   <service>
+      <provide interface="application.IntensiveCareUnit"/>
+   </service>
+</scr:component>

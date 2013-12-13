@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HSQLDB Service
+Bundle-SymbolicName: edu.utah.dcc.e4.hsqldb.osgi
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.hsqldb;bundle-version="2.2.8"
+Export-Package: edu.utah.dcc.e4.hsqldb.osgi
+Service-Component: OSGI-INF/component.xml
+Bundle-ActivationPolicy: lazy
