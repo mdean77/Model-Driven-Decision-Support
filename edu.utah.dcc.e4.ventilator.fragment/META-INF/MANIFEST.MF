@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ventilator Fragment
+Bundle-SymbolicName: edu.utah.dcc.e4.ventilator.fragment;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: edu.utah.dcc.e4.ventilator.fragment.Activator
+Require-Bundle: org.eclipse.e4.core.di,
+ org.eclipse.osgi,
+ edu.utah.dcc.e4.application.ui.core,
+ org.eclipse.jface,
+ org.eclipse.e4.ui.workbench,
+ org.eclipse.e4.ui.di
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Import-Package: javax.inject;version="1.0.0"
