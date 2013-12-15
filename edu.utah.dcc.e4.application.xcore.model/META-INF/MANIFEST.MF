@@ -8,11 +8,7 @@ Bundle-Activator: application.core.model.provider.ModelEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: application,
- application.impl,
- application.presentation,
- application.provider,
- application.util
+Export-Package: application
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.eclipse.emf.ecore,
@@ -24,3 +20,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport
 Bundle-ActivationPolicy: lazy
+Service-Component: OSGI-INF/patient.xml,
+ OSGI-INF/icu.xml

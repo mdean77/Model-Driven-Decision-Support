@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-
    <extension
-         id="product"
+         id="glucoseProduct"
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.e4.ui.workbench.swt.E4Application"
@@ -18,5 +17,38 @@
          </property>
       </product>
    </extension>
+   <extension
+         id="ventilatorProduct"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="Ventilator Application">
+         <property
+               name="appName"
+               value="Ventilator Application">
+         </property>
+         <property
+               name="lifeCycleURI"
+               value="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.lifecycle.Manager">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="genericProduct"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="Generic Core Application">
+         <property
+               name="appName"
+               value="Generic Core Application">
+         </property>
+         <property
+               name="lifeCycleURI"
+               value="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.lifecycle.Manager">
+         </property>
+      </product>
+   </extension>
+
 
 </plugin>
