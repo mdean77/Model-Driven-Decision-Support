@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_IC4kQGOCEeOsiPm04Be6Vg">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_IC4kQGOCEeOsiPm04Be6Vg">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_I-FBMGOCEeOsiPm04Be6Vg" featurename="children" parentElementId="edu.utah.dcc.e4.application.core.partstack.decision">
     <elements xsi:type="basic:Part" xmi:id="_R70YQGOCEeOsiPm04Be6Vg" elementId="edu.utah.dcc.e4.glucose.fragment.part.ventilatorDecision" contributionURI="bundleclass://edu.utah.dcc.e4.ventilator.fragment/edu.utah.dcc.e4.ventilator.parts.VentilatorFieldsAddedToDomainComposite" label="Ventilator Decision"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_7GdFQGZOEeOcw8I_r6RvLg" featurename="commands" parentElementId="edu.utah.dcc.e4.application.core.application">
+    <elements xsi:type="commands:Command" xmi:id="_BaCjMGZPEeOcw8I_r6RvLg" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_DgTsIGZPEeOcw8I_r6RvLg" featurename="handlers" parentElementId="edu.utah.dcc.e4.application.core.application">
+    <elements xsi:type="commands:Handler" xmi:id="_F5KZ4GZPEeOcw8I_r6RvLg" elementId="edu.utah.dcc.e4.ventilator.fragment.handler.about" contributionURI="bundleclass://edu.utah.dcc.e4.ventilator.fragment/edu.utah.dcc.e4.ventilator.handlers.AboutHandler" command="_BaCjMGZPEeOcw8I_r6RvLg"/>
   </fragments>
 </fragment:ModelFragments>

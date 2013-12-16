@@ -77,7 +77,6 @@
     <sharedElements xsi:type="basic:PartStack" xmi:id="_PaQ5MGBbEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.partstack.decision"/>
   </children>
   <handlers xmi:id="_5QA2sF9sEeOWo7ySidneMA" elementId="" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.QuitHandler" command="_0TbA4F9sEeOWo7ySidneMA"/>
-  <handlers xmi:id="_-v0xgF9wEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.0" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.AboutHandler" command="_73aZ8F9wEeOWo7ySidneMA"/>
   <handlers xmi:id="_BD6dkF99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.selectPatient" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.SelectPatientHandler" command="_VlWlgF92EeOWo7ySidneMA"/>
   <handlers xmi:id="_BgAjsF99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.editPatient" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.EditPatientHandler" command="_YgzqAF92EeOWo7ySidneMA"/>
   <handlers xmi:id="_CjPiUF99EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.showTraceWindow" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.ShowTraceWindowHandler" command="_Zo4sYF92EeOWo7ySidneMA"/>
@@ -90,7 +89,6 @@
   <handlers xmi:id="_-wcOwGAvEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.adminUserPerspective" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.AdminUserPerspectiveHandler" command="__gOsAF92EeOWo7ySidneMA"/>
   <handlers xmi:id="__KnpUGAvEeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.handler.superuserPerspective" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.SuperuserPerspectiveHandler" command="_JQxZAF93EeOWo7ySidneMA"/>
   <commands xmi:id="_0TbA4F9sEeOWo7ySidneMA" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
-  <commands xmi:id="_73aZ8F9wEeOWo7ySidneMA" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
   <commands xmi:id="_VlWlgF92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.selectPatient" commandName="selectPatientCommand"/>
   <commands xmi:id="_YgzqAF92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.editPatient" commandName="editPatientCommand"/>
   <commands xmi:id="_Zo4sYF92EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.command.showTraceWindow" commandName="showTraceWindowCommand"/>
