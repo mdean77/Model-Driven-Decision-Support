@@ -8,7 +8,11 @@ Bundle-Activator: application.core.model.provider.ModelEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: application
+Export-Package: application,
+ application.impl,
+ application.presentation,
+ application.provider,
+ application.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.eclipse.emf.ecore,
