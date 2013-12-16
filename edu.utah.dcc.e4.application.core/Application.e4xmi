@@ -73,7 +73,9 @@
     <sharedElements xsi:type="basic:PartStack" xmi:id="_WVIrUGA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partstack.properties">
       <children xsi:type="basic:Part" xmi:id="_8cO-MGA0EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.part.properties" label="Properties"/>
     </sharedElements>
-    <sharedElements xsi:type="basic:PartStack" xmi:id="_iCrloGA2EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partstack.tables"/>
+    <sharedElements xsi:type="basic:PartStack" xmi:id="_iCrloGA2EeOWo7ySidneMA" elementId="edu.utah.dcc.e4.application.core.partstack.tables">
+      <children xsi:type="basic:Part" xmi:id="_7rj5QGZVEeOw44PNUrbEcA" elementId="edu.utah.dcc.e4.application.core.part.contextExplorer" contributionURI="bundleclass://com.opcoach.e4.contextExplorer/com.opcoach.e4.contextExplorer.parts.ContextExplorerPart" label="Context Explorer"/>
+    </sharedElements>
     <sharedElements xsi:type="basic:PartStack" xmi:id="_PaQ5MGBbEeOXMIwN3j3CfQ" elementId="edu.utah.dcc.e4.application.core.partstack.decision"/>
   </children>
   <handlers xmi:id="_5QA2sF9sEeOWo7ySidneMA" elementId="" contributionURI="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.core.handlers.QuitHandler" command="_0TbA4F9sEeOWo7ySidneMA"/>
