@@ -176,6 +176,7 @@ public class DecisionCompositeButtonsOnly {
 	public  boolean allRequiredFieldsFilledIn(){
 		//TODO This needs to be overridden for each domain specific editor.
 		// It may be better to use some kind of injection on this.
+		System.out.println("In the underlying allRequiredFieldsFilledIn procedure");
 		return false;
 	};
 	

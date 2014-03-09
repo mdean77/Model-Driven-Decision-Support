@@ -328,6 +328,7 @@ public class GlucoseFieldsAddedToDomainComposite extends DecisionFieldsAddedComp
 	}
 
 	public final boolean allRequiredFieldsFilledIn() {
+		System.out.println("IN the glucose override of all required fields filled in");
 		return 
 				
 				(currentGlucoseText.getText().length() > 0)
