@@ -42,6 +42,7 @@ public class DecisionFieldsAddedComposite extends DecisionCompositeButtonsOnly /
 
 
 
+	
 	protected void createControls(Composite parent) {
 		super.createControls(parent);
 		resManager = new LocalResourceManager(JFaceResources.getResources(), parent);
@@ -52,7 +53,6 @@ public class DecisionFieldsAddedComposite extends DecisionCompositeButtonsOnly /
 		createExplainGroup();
 		
 	}
-
 
 
 	private void createDecisionComposite(Composite parent) {

@@ -31,6 +31,7 @@ public class DecisionCompositeButtonsOnly {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	protected void createControls(Composite parent) {
 		parent.setLayout(new FormLayout());
 		resManager = new LocalResourceManager(JFaceResources.getResources(), parent);
@@ -54,6 +55,9 @@ public class DecisionCompositeButtonsOnly {
 		createChartDataButton();
 	}
 
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	private void createButtonComposite(Composite parent) {
 		buttonComposite = new Composite(parent, SWT.NONE);
 		setupButtonFormLayout();
