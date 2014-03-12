@@ -16,18 +16,25 @@ public class HsqldbServiceImpl implements HsqldbService {
 	@Override
 	public boolean isRunning() {
 		System.out.println("In isRunning method of OSGI service");
-		return false;
+		try {
+			hsqlServer.checkRunning(true);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
 	}
 
 	@Override
 	public void startServer() {
 		System.out.println("In start server method of OSGI service");
+		if(isRunning()) return;
 		hsqlServer.start();
 	}
 
 	@Override
 	public void stopServer() {
 		System.out.println("In stop server method of OSGI service");
+		if(!isRunning()) return;
 		hsqlServer.stop();
 	}
 
