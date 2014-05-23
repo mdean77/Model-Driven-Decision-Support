@@ -61,7 +61,6 @@ public class DecisionCompositeButtonsOnly {
 	private void createButtonComposite(Composite parent) {
 		buttonComposite = new Composite(parent, SWT.NONE);
 		setupButtonFormLayout();
-		//buttonComposite.setBackground(SWTResourceManager.getColor(83, 102, 240));
 		buttonComposite.setBackground(resManager.createColor(new RGB(83, 102, 240)));
 	}
 
