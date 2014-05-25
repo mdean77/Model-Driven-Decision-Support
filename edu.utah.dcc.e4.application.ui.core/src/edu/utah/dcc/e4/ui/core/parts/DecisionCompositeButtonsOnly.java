@@ -25,7 +25,7 @@ public class DecisionCompositeButtonsOnly {
 //	}
 	
 	//TODO Fix the logic for enabling the buttons
-	//If all required fields are filled in, 
+	//If all required fields are filled in, then fix it
 
 	 public DecisionCompositeButtonsOnly(Composite parent) {
 		// TODO Auto-generated constructor stub
