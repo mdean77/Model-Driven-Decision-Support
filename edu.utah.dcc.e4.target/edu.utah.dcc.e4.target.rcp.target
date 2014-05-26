@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="edu.utah.dcc.e4.target.rcp" sequenceNumber="8">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.rcp.sdk.id" version="4.3.2.M20140221-1700"/>
+<unit id="org.eclipse.equinox.p2.sdk.feature.group" version="3.8.1.v20140221-1852"/>
+<unit id="org.eclipse.emf.ecore.xcore.sdk.feature.group" version="1.1.1.v20130903-0948"/>
+<repository location="http://download.eclipse.org/releases/kepler"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.hsqldb.feature.group" version="2.2.8.201310261216"/>
+<unit id="org.apache.commons.logging.feature.group" version="1.1.1.201310261216"/>
+<unit id="org.apache.log4j.feature.group" version="1.2.16.201310261216"/>
+<unit id="com.mysql.jdbc.feature.group" version="5.1.11.201310261216"/>
+<unit id="com.microsoft.sqlserver.jdbc.feature.group" version="3.0.1301.201310261216"/>
+<unit id="javax.persistence.feature.group" version="2.0.1.201310261216"/>
+<unit id="com.db4o.feature.group" version="7.4.155.v20120928-1733"/>
+<unit id="org.dom4j.feature.group" version="1.6.1.201310261216"/>
+<unit id="org.postgresql.feature.group" version="9.0.0.201310261216"/>
+<unit id="org.hibernate.feature.group" version="4.1.1.201310261216"/>
+<repository location="http://www.elver.org/eclipse/2.0.0/update"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.teneo.hibernate.sdk.feature.group" version="2.0.1.v201312161349"/>
+<unit id="org.eclipse.emf.teneo.hibernate.feature.group" version="2.0.1.v201312161349"/>
+<repository location="http://download.eclipse.org/modeling/emf/teneo/updates/2.0.0/interim/"/>
+</location>
+</locations>
+</target>
