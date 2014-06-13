@@ -14,7 +14,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jface,
  org.eclipse.e4.ui.model.workbench,
  edu.utah.dcc.e4.hsqldb.osgi;bundle-version="1.0.0",
- com.opcoach.e4.contextExplorer;bundle-version="1.0.0"
+ com.opcoach.e4.contextExplorer;bundle-version="1.0.0",
+ org.eclipse.e4.ui.css.swt.theme
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: javax.annotation;version="1.1.0",
  javax.inject;version="1.0.0"

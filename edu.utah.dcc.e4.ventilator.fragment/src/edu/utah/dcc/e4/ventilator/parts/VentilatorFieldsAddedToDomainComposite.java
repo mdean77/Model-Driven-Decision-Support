@@ -3,8 +3,12 @@ package edu.utah.dcc.e4.ventilator.parts;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+
+
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.swt.widgets.Composite;
 
 
@@ -31,12 +35,23 @@ import org.eclipse.swt.widgets.DateTime;
 
 
 
+
+
+
+
+
 import com.swtdesigner.SWTResourceManager;
 
 
 
 
-import edu.utah.dcc.e4.ui.core.parts.DecisionFieldsAddedComposite;
+
+
+
+
+
+
+import edu.utah.dcc.e4.ui.core.parts.DecisionFragmentPart;
 
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.custom.CTabFolder;
@@ -45,7 +60,7 @@ import org.eclipse.swt.custom.StyledText;
 
 @SuppressWarnings("unused")
 public class VentilatorFieldsAddedToDomainComposite extends
-	DecisionFieldsAddedComposite {
+	DecisionFragmentPart {
 
 	private DateTime observationTime;
 	private Label observationTimeLabel;
@@ -143,15 +158,22 @@ public class VentilatorFieldsAddedToDomainComposite extends
 	private Text endTidalCO2Text_4;
 	private Text endTidalCO2Text_2;
 	private Text endTidalCO2Text;
+  private Composite domainFieldsComposite;
 
+  
+  @Inject IStylingEngine engine;
+  
 	@Inject
-	public VentilatorFieldsAddedToDomainComposite(Composite parent) {
-		super(parent);
-		super.createControls(parent);
+	public VentilatorFieldsAddedToDomainComposite(Composite part) {
+		super(part);
+		//super.createControls(parent);
 		//getDecisionText().setFont(SWTResourceManager.getFont("Tahoma", 10, SWT.NORMAL));
 		//TODO We need to put a menu item in the program that will let the user make font bigger or smaller
 		//     The setting KS put in here is actually SMALLER on the Mac and looks terrible.  I think that
 		//     SWT selects fonts that are designed for each native so there needs to be a more general solution.
+		
+		
+		domainFieldsComposite = new Composite(this.getParentSashForm(), 0);
 		domainFieldsComposite.setLayout(new FormLayout());
 		
 		Composite composite = createTopComposite();
@@ -165,9 +187,15 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		createVolumeControlVentilatorPanel();
 		createExtubatedPanel();
 
+		super.moveToTop(domainFieldsComposite);
 	}
 
 
+	@PostConstruct
+	public void postConstruct() 
+	{
+	  addTheme(engine);
+	}
 
 	private void createVentilatorTabFolder(Composite composite,
 			FormData fd_group) {
@@ -216,6 +244,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 			}
 		});
 	}
+
 
 	private void createVolumeControlVentilatorPanel() {
 		GridData gd_bloodGasDateTime;
@@ -1418,7 +1447,6 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		btnRefreshDateTime.setText("Refresh Date Time");
 	}
 
-	@Override
 	public boolean allRequiredFieldsFilledIn() {
 		if(btnHfov.getSelection()==true){
 			return allHfovFieldsFilledIn();

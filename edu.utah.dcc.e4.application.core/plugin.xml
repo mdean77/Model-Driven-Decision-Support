@@ -31,6 +31,10 @@
                name="lifeCycleURI"
                value="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.lifecycle.Manager">
          </property>
+         <property
+               name="cssTheme"
+               value="edu.utah.dcc.e4.application.core.default">
+         </property>
       </product>
    </extension>
    <extension
@@ -48,6 +52,14 @@
                value="bundleclass://edu.utah.dcc.e4.application.core/edu.utah.dcc.e4.application.lifecycle.Manager">
          </property>
       </product>
+   </extension>
+   <extension
+         point="org.eclipse.e4.ui.css.swt.theme">
+      <theme
+            basestylesheeturi="css/default.css"
+            id="edu.utah.dcc.e4.application.core.default"
+            label="Default Theme">
+      </theme>
    </extension>
 
 
