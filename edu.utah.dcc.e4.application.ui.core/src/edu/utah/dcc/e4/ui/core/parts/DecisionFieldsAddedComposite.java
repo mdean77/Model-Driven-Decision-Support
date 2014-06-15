@@ -23,7 +23,7 @@ public class DecisionFieldsAddedComposite extends DecisionCompositeButtonsOnly /
 	private StyledText decisionText;
 	private Group explainGroup;
 	private StyledText explanationText;
-	private LocalResourceManager resManager;
+	protected LocalResourceManager resManager;
 	private Font font;
 	//private Boolean decisionFiredFlag;
 	public Composite domainFieldsComposite;
