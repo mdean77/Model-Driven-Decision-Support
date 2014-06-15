@@ -5,6 +5,8 @@ import java.util.GregorianCalendar;
 
 import javax.inject.Inject;
 
+import org.eclipse.jface.resource.ColorDescriptor;
+import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.swt.widgets.Composite;
 
 
@@ -27,14 +29,9 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.VerifyEvent;
 import org.eclipse.swt.events.VerifyListener;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.DateTime;
-
-
-
-import com.swtdesigner.SWTResourceManager;
-
-
-
 
 import edu.utah.dcc.e4.ui.core.parts.DecisionFieldsAddedComposite;
 
@@ -42,6 +39,7 @@ import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.custom.StyledText;
+import org.w3c.dom.css.RGBColor;
 
 @SuppressWarnings("unused")
 public class VentilatorFieldsAddedToDomainComposite extends
@@ -138,16 +136,22 @@ public class VentilatorFieldsAddedToDomainComposite extends
 	private Text inspiredO2Text_5;
 	private Text saturationO2Text_5;
 	private Label label_4;
-	private Color required = SWTResourceManager.getColor(255, 255, 153);
+	private Color required; 
 	private Group ventilatorModeGroup;
 	private Text endTidalCO2Text_4;
 	private Text endTidalCO2Text_2;
 	private Text endTidalCO2Text;
+	private Font smallFont, normalFont;
+	
+
 
 	@Inject
 	public VentilatorFieldsAddedToDomainComposite(Composite parent) {
 		super(parent);
 		super.createControls(parent);
+		smallFont = resManager.createFont(FontDescriptor.createFrom("Lucida Grande", smallFontSize, SWT.NORMAL));
+		normalFont = resManager.createFont(FontDescriptor.createFrom("Lucida Grande", normalFontSize, SWT.NORMAL));
+		required = resManager.createColor(new RGB(255,255,153));
 		//getDecisionText().setFont(SWTResourceManager.getFont("Tahoma", 10, SWT.NORMAL));
 		//TODO We need to put a menu item in the program that will let the user make font bigger or smaller
 		//     The setting KS put in here is actually SMALLER on the Mac and looks terrible.  I think that
@@ -258,8 +262,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		lblLastDate_pH_4 = new Label(composite_VolumeControl, SWT.NONE);
 		lblLastDate_pH_4.setLayoutData(gd_bloodGasDateTime);
 		lblLastDate_pH_4.setText("Last Date");
-		lblLastDate_pH_4.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_pH_4.setFont(smallFont);
 		
 		new Label(composite_VolumeControl, SWT.NONE);
 
@@ -269,8 +272,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		lblLastDate_PaO2_4 = new Label(composite_VolumeControl, SWT.NONE);
 		lblLastDate_PaO2_4.setLayoutData(gd_bloodGasDateTime);
 		lblLastDate_PaO2_4.setText("Last Date");
-		lblLastDate_PaO2_4.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_PaO2_4.setFont(smallFont);
 		new Label(composite_VolumeControl, SWT.NONE);
 
 		gd_bloodGasDateTime = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
@@ -279,14 +281,12 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		lblLastDate_PCO2_4 = new Label(composite_VolumeControl, SWT.NONE);
 		lblLastDate_PCO2_4.setLayoutData(gd_bloodGasDateTime);
 		lblLastDate_PCO2_4.setText("Last Date");
-		lblLastDate_PCO2_4.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_PCO2_4.setFont(smallFont);
 
 		makeFiO2Label(composite_VolumeControl);
 
 		inspiredO2Text_4 = new Text(composite_VolumeControl, SWT.BORDER);
-		inspiredO2Text_4.setBackground(SWTResourceManager.getColor(255, 255,
-				153));
+		inspiredO2Text_4.setBackground(required);
 		inspiredO2Text_4.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
 				false, 1, 1));
 		addListenersToTextField(inspiredO2Text_4);
@@ -304,8 +304,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		makeSatLabel(composite_VolumeControl);
 
 		saturationO2Text_4 = new Text(composite_VolumeControl, SWT.BORDER);
-		saturationO2Text_4.setBackground(SWTResourceManager.getColor(255, 255,
-				153));
+		saturationO2Text_4.setBackground(required);
 		saturationO2Text_4.setLayoutData(new GridData(SWT.FILL, SWT.CENTER,
 				true, false, 1, 1));
 		addListenersToTextField(saturationO2Text_4);
@@ -338,8 +337,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		makeVentilatorRateLabel(composite_VolumeControl);
 
 		ventilatorRateText_4 = new Text(composite_VolumeControl, SWT.BORDER);
-		ventilatorRateText_4.setBackground(SWTResourceManager.getColor(255,
-				255, 153));
+		ventilatorRateText_4.setBackground(required);
 		ventilatorRateText_4.setLayoutData(new GridData(SWT.FILL, SWT.CENTER,
 				true, false, 1, 1));
 		addListenersToTextField(ventilatorRateText_4);
@@ -357,8 +355,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		makeTidalVolumeLabel(composite_VolumeControl);
 
 		tidalVolumeText_4 = new Text(composite_VolumeControl, SWT.BORDER);
-		tidalVolumeText_4.setBackground(SWTResourceManager.getColor(255, 255,
-				153));
+		tidalVolumeText_4.setBackground(required);
 		tidalVolumeText_4.setLayoutData(new GridData(SWT.FILL, SWT.CENTER,
 				true, false, 1, 1));
 		addListenersToTextField(tidalVolumeText_4);
@@ -375,8 +372,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 
 		tidalVolumePerKgLabel4 = new Label(composite_VolumeControl, SWT.NONE);
 		tidalVolumePerKgLabel4.setText("(Calculated ml/kg)");
-		tidalVolumePerKgLabel4.setFont(SWTResourceManager
-				.getFont("Lucida Grande", smallFontSize, SWT.NORMAL));
+		tidalVolumePerKgLabel4.setFont(smallFont);
 		
 		new Label(composite_VolumeControl, SWT.NONE);
 
@@ -404,8 +400,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		lblPlateauPressure.setText("Plateau Pressure:");
 
 		plateauPressureText_4 = new Text(composite_VolumeControl, SWT.BORDER);
-		plateauPressureText_4.setBackground(SWTResourceManager.getColor(255,
-				255, 153));
+		plateauPressureText_4.setBackground(required);
 		plateauPressureText_4.setLayoutData(new GridData(SWT.FILL, SWT.CENTER,
 				true, false, 1, 1));
 		addListenersToTextField(plateauPressureText_4);
@@ -479,8 +474,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 				.setToolTipText("time of the most recent pH measurement");
 		lblLastDate_pH_3.setLayoutData(gd_bloodGasDateTime);
 		lblLastDate_pH_3.setText("Last Date");
-		lblLastDate_pH_3.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_pH_3.setFont(smallFont);
 		new Label(composite_HFOV, SWT.NONE);
 
 		gd_bloodGasDateTime = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
@@ -491,8 +485,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 				.setToolTipText("time of the most recent PaO2 measurement");
 		lblLastDate_PaO2_3.setLayoutData(gd_bloodGasDateTime);
 		lblLastDate_PaO2_3.setText("Last Date");
-		lblLastDate_PaO2_3.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_PaO2_3.setFont(smallFont);
 		new Label(composite_HFOV, SWT.NONE);
 
 		gd_bloodGasDateTime = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
@@ -503,15 +496,13 @@ public class VentilatorFieldsAddedToDomainComposite extends
 				.setToolTipText("time of the most recent PCO2 measurement");
 		lblLastDate_PCO2_3.setLayoutData(gd_bloodGasDateTime);
 		lblLastDate_PCO2_3.setText("Last Date");
-		lblLastDate_PCO2_3.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_PCO2_3.setFont(smallFont);
 
 		makeFiO2Label(composite_HFOV);
 
 		inspiredO2Text_3 = new Text(composite_HFOV, SWT.BORDER);
 		inspiredO2Text_3.setEnabled(true);
-		inspiredO2Text_3.setBackground(SWTResourceManager.getColor(255, 255,
-				153));
+		inspiredO2Text_3.setBackground(required);
 		inspiredO2Text_3.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
 				false, 1, 1));
 		addListenersToTextField(inspiredO2Text_3);
@@ -641,8 +632,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 				.setToolTipText("time of the most recent pH measurement");
 		lblLastDate_pH_2.setLayoutData(gd_bloodGasDateTime);
 		lblLastDate_pH_2.setText("Last Date");
-		lblLastDate_pH_2.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_pH_2.setFont(smallFont);
 		new Label(composite_PRVC, SWT.NONE);
 
 		gd_bloodGasDateTime = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
@@ -653,8 +643,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 				.setToolTipText("time of the most recent PaO2 measurement");
 		lblLastDate_PaO2_2.setLayoutData(gd_bloodGasDateTime);
 		lblLastDate_PaO2_2.setText("Last Date");
-		lblLastDate_PaO2_2.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_PaO2_2.setFont(smallFont);
 		new Label(composite_PRVC, SWT.NONE);
 
 		gd_bloodGasDateTime = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
@@ -665,8 +654,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 				.setToolTipText("time of the most recent PCO2 measurement");
 		lblLastDate_PCO2_2.setLayoutData(gd_bloodGasDateTime);
 		lblLastDate_PCO2_2.setText("Last Date");
-		lblLastDate_PCO2_2.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_PCO2_2.setFont(smallFont);
 
 		makeFiO2Label(composite_PRVC);
 
@@ -762,8 +750,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		});
 
 		tidalVolumePerKgLabel2 = new Label(composite_PRVC, SWT.NONE);
-		tidalVolumePerKgLabel2.setFont(SWTResourceManager
-				.getFont("Lucida Grande", smallFontSize, SWT.NORMAL));
+		tidalVolumePerKgLabel2.setFont(smallFont);
 		tidalVolumePerKgLabel2.setText("(Calculated ml/kg)");
 		new Label(composite_PRVC, SWT.NONE);
 
@@ -876,8 +863,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		lblLastDate_pH = new Label(composite_PC, SWT.NONE);
 		lblLastDate_pH.setToolTipText("time of the most recent pH measurement");
 		lblLastDate_pH.setLayoutData(gd_bloodGasDateTime);
-		lblLastDate_pH.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_pH.setFont(smallFont);
 		lblLastDate_pH.setText("Last Date");
 		new Label(composite_PC, SWT.NONE);
 
@@ -888,8 +874,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		lblLastDate_PaO2
 				.setToolTipText("time of the most recent PaO2 measurement");
 		lblLastDate_PaO2.setLayoutData(gd_bloodGasDateTime);
-		lblLastDate_PaO2.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_PaO2.setFont(smallFont);
 		lblLastDate_PaO2.setText("Last Date");
 		new Label(composite_PC, SWT.NONE);
 
@@ -899,8 +884,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		lblLastDate_PCO2
 				.setToolTipText("time of the most recent PCO2 measurement");
 		lblLastDate_PCO2.setLayoutData(gd_bloodGasDateTime);
-		lblLastDate_PCO2.setFont(SWTResourceManager.getFont("Lucida Grande",
-				smallFontSize, SWT.NORMAL));
+		lblLastDate_PCO2.setFont(smallFont);
 		lblLastDate_PCO2.setText("Last Date");
 
 		makeFiO2Label(composite_PC);
@@ -996,8 +980,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		});
 
 		tidalVolumePerKgLabel = new Label(composite_PC, SWT.NONE);
-		tidalVolumePerKgLabel.setFont(SWTResourceManager
-				.getFont("Lucida Grande", smallFontSize, SWT.NORMAL));
+		tidalVolumePerKgLabel.setFont(smallFont);
 		tidalVolumePerKgLabel.setText("(Calculated ml/kg)");
 		tidalVolumePerKgLabel.setToolTipText("Calculated ml/kg");
 		new Label(composite_PC, SWT.NONE);
@@ -1107,12 +1090,12 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		
 		labelLastPh_5 = new Label(composite_1, SWT.NONE);
 		labelLastPh_5.setText("Last Date");
-		labelLastPh_5.setFont(SWTResourceManager.getFont("Lucida Grande", 9, SWT.NORMAL));
+		labelLastPh_5.setFont(smallFont);
 		new Label(composite_1, SWT.NONE);
 		
 		labelLastPo2_5 = new Label(composite_1, SWT.NONE);
 		labelLastPo2_5.setText("Last Date");
-		labelLastPo2_5.setFont(SWTResourceManager.getFont("Lucida Grande", 9, SWT.NORMAL));
+		labelLastPo2_5.setFont(smallFont);
 		new Label(composite_1, SWT.NONE);
 		
 		labelLastPco2_5 = new Label(composite_1, SWT.NONE);
@@ -1120,7 +1103,7 @@ public class VentilatorFieldsAddedToDomainComposite extends
 		gd_labelLastPco2_5.widthHint = 75;
 		labelLastPco2_5.setLayoutData(gd_labelLastPco2_5);
 		labelLastPco2_5.setText("Last Date");
-		labelLastPco2_5.setFont(SWTResourceManager.getFont("Lucida Grande", 9, SWT.NORMAL));
+		labelLastPco2_5.setFont(smallFont);
 		
 //		Label lblFio = new Label(composite_1, SWT.NONE);
 //		lblFio.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
