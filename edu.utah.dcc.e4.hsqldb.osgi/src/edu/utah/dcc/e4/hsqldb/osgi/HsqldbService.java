@@ -8,4 +8,6 @@ public interface HsqldbService {
 	void startServer();
 	void stopServer();
 	void setDatabase(String database);
+	String getDatabase();
+	String getDatabasePath();
 }

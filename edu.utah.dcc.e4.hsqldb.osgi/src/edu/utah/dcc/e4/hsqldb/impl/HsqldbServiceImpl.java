@@ -45,4 +45,14 @@ public class HsqldbServiceImpl implements HsqldbService {
         hsqlServer.setDatabasePath(0, database);		
 	}
 
+	@Override
+	public String getDatabase() {
+		return hsqlServer.getDatabaseName(0, false);
+	}
+
+	@Override
+	public String getDatabasePath() {
+		return hsqlServer.getDatabasePath(0, false);
+	}
+
 }
