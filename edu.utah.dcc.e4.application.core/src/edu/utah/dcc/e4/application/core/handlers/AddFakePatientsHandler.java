@@ -13,6 +13,13 @@ public class AddFakePatientsHandler {
 	@Execute
 	public void execute(HsqldbService hsqlService) {
 		System.out.println("In add fake patients handler");
+		if(hsqlService.isRunning()){
+			System.out.println("HSQLDB Server is running");
+			System.out.println("The database name is --> " + hsqlService.getDatabase());
+			System.out.println("The database path is --> " + hsqlService.getDatabasePath());
+		} else {
+			System.out.println("HSQLDB Server is NOT running");
+		}
 //		Properties hibernateProperties = new Properties();
 //		hibernateProperties.setProperty(Environment.HBM2DDL_AUTO, "create");
 //		hibernateProperties.setProperty(Environment.SHOW_SQL, "false");
