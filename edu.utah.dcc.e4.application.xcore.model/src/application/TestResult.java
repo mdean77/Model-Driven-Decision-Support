@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link application.TestResult#getLoincCode <em>Loinc Code</em>}</li>
  *   <li>{@link application.TestResult#getLabelName <em>Label Name</em>}</li>
  *   <li>{@link application.TestResult#getConventionalTextResult <em>Conventional Text Result</em>}</li>
- *   <li>{@link application.TestResult#getConventionalUnits <em>Conventional Units</em>}</li>
+ *   <li>{@link application.TestResult#getConventionalUnit <em>Conventional Unit</em>}</li>
  *   <li>{@link application.TestResult#getLaboratoryTest <em>Laboratory Test</em>}</li>
  * </ul>
  * </p>
@@ -137,30 +137,30 @@ public interface TestResult extends EObject
   void setConventionalTextResult(String value);
 
   /**
-   * Returns the value of the '<em><b>Conventional Units</b></em>' attribute.
+   * Returns the value of the '<em><b>Conventional Unit</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Conventional Units</em>' attribute isn't clear,
+   * If the meaning of the '<em>Conventional Unit</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Conventional Units</em>' attribute.
-   * @see #setConventionalUnits(String)
-   * @see application.ApplicationPackage#getTestResult_ConventionalUnits()
+   * @return the value of the '<em>Conventional Unit</em>' attribute.
+   * @see #setConventionalUnit(String)
+   * @see application.ApplicationPackage#getTestResult_ConventionalUnit()
    * @model unique="false"
    * @generated
    */
-  String getConventionalUnits();
+  String getConventionalUnit();
 
   /**
-   * Sets the value of the '{@link application.TestResult#getConventionalUnits <em>Conventional Units</em>}' attribute.
+   * Sets the value of the '{@link application.TestResult#getConventionalUnit <em>Conventional Unit</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Conventional Units</em>' attribute.
-   * @see #getConventionalUnits()
+   * @param value the new value of the '<em>Conventional Unit</em>' attribute.
+   * @see #getConventionalUnit()
    * @generated
    */
-  void setConventionalUnits(String value);
+  void setConventionalUnit(String value);
 
   /**
    * Returns the value of the '<em><b>Laboratory Test</b></em>' container reference.

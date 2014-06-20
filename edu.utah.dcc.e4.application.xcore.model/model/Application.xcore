@@ -1,9 +1,9 @@
 @Ecore(nsPrefix="edu.utah.dcc.e4", nsURI="http://edu/utah/dcc/e4/application/xcore/model")
 @TeneoJpa(appinfo="@GenericGenerator(name=\"system-uuid\", strategy = \"uuid2\")")
 @GenModel(modelDirectory="/edu.utah.dcc.e4.application.xcore.model/src", importerID="org.eclipse.emf.importer.ecore", editorDirectory="/edu.utah.dcc.e4.application.xcore.model/src", editDirectory="/edu.utah.dcc.e4.application.xcore.model/src", testsDirectory="/edu.utah.dcc.e4.application.xcore.model.tests/src", providerRootExtendsClass="", tableProviders="true")
-package application
+package application 
 
-import java.text.DateFormat 
+import java.text.DateFormat
 
 annotation "teneo.jpa" as TeneoJpa 
 @GenModel(documentation="Person entity is used as a base class for patients and users.")
@@ -59,7 +59,7 @@ class Patient extends Person {
 @GenModel(documentation="This is a clinical user of the software, generally a nurse or physician.")
 class User extends Person {
 	AccessType accountRights = "Normal"
-	String accountName
+	String accountName 
 	String passwordDigest
 	refers User createdBy
 }
@@ -177,6 +177,6 @@ class TestResult {
 	String loincCode
 	String labelName
 	String conventionalTextResult
-	String conventionalUnits
+	String conventionalUnit
 	container LaboratoryTest laboratoryTest  opposite results
 }

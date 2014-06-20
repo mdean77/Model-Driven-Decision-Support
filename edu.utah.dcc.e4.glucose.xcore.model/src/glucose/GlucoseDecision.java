@@ -26,6 +26,7 @@ import java.util.Calendar;
  *   <li>{@link glucose.GlucoseDecision#getRecommendedInsulinDripRate <em>Recommended Insulin Drip Rate</em>}</li>
  *   <li>{@link glucose.GlucoseDecision#getRecommendedInsulinBolus <em>Recommended Insulin Bolus</em>}</li>
  *   <li>{@link glucose.GlucoseDecision#getRecommendedGlucoseBolus <em>Recommended Glucose Bolus</em>}</li>
+ *   <li>{@link glucose.GlucoseDecision#getPreviousPrevGlucose <em>Previous Prev Glucose</em>}</li>
  *   <li>{@link glucose.GlucoseDecision#getInsulinMode <em>Insulin Mode</em>}</li>
  * </ul>
  * </p>
@@ -246,6 +247,32 @@ public interface GlucoseDecision extends ClinicalDecision
    * @generated
    */
   void setRecommendedGlucoseBolus(Double value);
+
+  /**
+   * Returns the value of the '<em><b>Previous Prev Glucose</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Previous Prev Glucose</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Previous Prev Glucose</em>' attribute.
+   * @see #setPreviousPrevGlucose(Double)
+   * @see glucose.GlucosePackage#getGlucoseDecision_PreviousPrevGlucose()
+   * @model unique="false"
+   * @generated
+   */
+  Double getPreviousPrevGlucose();
+
+  /**
+   * Sets the value of the '{@link glucose.GlucoseDecision#getPreviousPrevGlucose <em>Previous Prev Glucose</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Previous Prev Glucose</em>' attribute.
+   * @see #getPreviousPrevGlucose()
+   * @generated
+   */
+  void setPreviousPrevGlucose(Double value);
 
   /**
    * Returns the value of the '<em><b>Insulin Mode</b></em>' attribute.

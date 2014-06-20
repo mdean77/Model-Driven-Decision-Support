@@ -210,9 +210,19 @@ public class GlucosePackageImpl extends EPackageImpl implements GlucosePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGlucoseDecision_InsulinMode()
+  public EAttribute getGlucoseDecision_PreviousPrevGlucose()
   {
     return (EAttribute)glucoseDecisionEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGlucoseDecision_InsulinMode()
+  {
+    return (EAttribute)glucoseDecisionEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -274,6 +284,7 @@ public class GlucosePackageImpl extends EPackageImpl implements GlucosePackage
     createEAttribute(glucoseDecisionEClass, GLUCOSE_DECISION__RECOMMENDED_INSULIN_DRIP_RATE);
     createEAttribute(glucoseDecisionEClass, GLUCOSE_DECISION__RECOMMENDED_INSULIN_BOLUS);
     createEAttribute(glucoseDecisionEClass, GLUCOSE_DECISION__RECOMMENDED_GLUCOSE_BOLUS);
+    createEAttribute(glucoseDecisionEClass, GLUCOSE_DECISION__PREVIOUS_PREV_GLUCOSE);
     createEAttribute(glucoseDecisionEClass, GLUCOSE_DECISION__INSULIN_MODE);
 
     // Create enums
@@ -328,6 +339,7 @@ public class GlucosePackageImpl extends EPackageImpl implements GlucosePackage
     initEAttribute(getGlucoseDecision_RecommendedInsulinDripRate(), theEcorePackage.getEDoubleObject(), "recommendedInsulinDripRate", null, 0, 1, GlucoseDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGlucoseDecision_RecommendedInsulinBolus(), theEcorePackage.getEDoubleObject(), "recommendedInsulinBolus", null, 0, 1, GlucoseDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGlucoseDecision_RecommendedGlucoseBolus(), theEcorePackage.getEDoubleObject(), "recommendedGlucoseBolus", null, 0, 1, GlucoseDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGlucoseDecision_PreviousPrevGlucose(), theEcorePackage.getEDoubleObject(), "previousPrevGlucose", null, 0, 1, GlucoseDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGlucoseDecision_InsulinMode(), theEcorePackage.getEString(), "insulinMode", null, 0, 1, GlucoseDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals

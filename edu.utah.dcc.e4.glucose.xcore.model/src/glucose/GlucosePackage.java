@@ -297,13 +297,22 @@ public interface GlucosePackage extends EPackage
   int GLUCOSE_DECISION__RECOMMENDED_GLUCOSE_BOLUS = ApplicationPackage.CLINICAL_DECISION_FEATURE_COUNT + 7;
 
   /**
+   * The feature id for the '<em><b>Previous Prev Glucose</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GLUCOSE_DECISION__PREVIOUS_PREV_GLUCOSE = ApplicationPackage.CLINICAL_DECISION_FEATURE_COUNT + 8;
+
+  /**
    * The feature id for the '<em><b>Insulin Mode</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GLUCOSE_DECISION__INSULIN_MODE = ApplicationPackage.CLINICAL_DECISION_FEATURE_COUNT + 8;
+  int GLUCOSE_DECISION__INSULIN_MODE = ApplicationPackage.CLINICAL_DECISION_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Decision</em>' class.
@@ -312,7 +321,7 @@ public interface GlucosePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GLUCOSE_DECISION_FEATURE_COUNT = ApplicationPackage.CLINICAL_DECISION_FEATURE_COUNT + 9;
+  int GLUCOSE_DECISION_FEATURE_COUNT = ApplicationPackage.CLINICAL_DECISION_FEATURE_COUNT + 10;
 
   /**
    * The operation id for the '<em>Advise</em>' operation.
@@ -452,6 +461,17 @@ public interface GlucosePackage extends EPackage
   EAttribute getGlucoseDecision_RecommendedGlucoseBolus();
 
   /**
+   * Returns the meta object for the attribute '{@link glucose.GlucoseDecision#getPreviousPrevGlucose <em>Previous Prev Glucose</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Previous Prev Glucose</em>'.
+   * @see glucose.GlucoseDecision#getPreviousPrevGlucose()
+   * @see #getGlucoseDecision()
+   * @generated
+   */
+  EAttribute getGlucoseDecision_PreviousPrevGlucose();
+
+  /**
    * Returns the meta object for the attribute '{@link glucose.GlucoseDecision#getInsulinMode <em>Insulin Mode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -580,6 +600,14 @@ public interface GlucosePackage extends EPackage
      * @generated
      */
     EAttribute GLUCOSE_DECISION__RECOMMENDED_GLUCOSE_BOLUS = eINSTANCE.getGlucoseDecision_RecommendedGlucoseBolus();
+
+    /**
+     * The meta object literal for the '<em><b>Previous Prev Glucose</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GLUCOSE_DECISION__PREVIOUS_PREV_GLUCOSE = eINSTANCE.getGlucoseDecision_PreviousPrevGlucose();
 
     /**
      * The meta object literal for the '<em><b>Insulin Mode</b></em>' attribute feature.

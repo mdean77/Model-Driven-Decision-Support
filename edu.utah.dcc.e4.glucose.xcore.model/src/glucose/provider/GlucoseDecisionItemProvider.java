@@ -76,6 +76,7 @@ public class GlucoseDecisionItemProvider
       addRecommendedInsulinDripRatePropertyDescriptor(object);
       addRecommendedInsulinBolusPropertyDescriptor(object);
       addRecommendedGlucoseBolusPropertyDescriptor(object);
+      addPreviousPrevGlucosePropertyDescriptor(object);
       addInsulinModePropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
@@ -266,6 +267,29 @@ public class GlucoseDecisionItemProvider
   }
 
   /**
+   * This adds a property descriptor for the Previous Prev Glucose feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addPreviousPrevGlucosePropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_GlucoseDecision_previousPrevGlucose_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_GlucoseDecision_previousPrevGlucose_feature", "_UI_GlucoseDecision_type"),
+         GlucosePackage.Literals.GLUCOSE_DECISION__PREVIOUS_PREV_GLUCOSE,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
+  }
+
+  /**
    * This adds a property descriptor for the Insulin Mode feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -338,6 +362,7 @@ public class GlucoseDecisionItemProvider
       case GlucosePackage.GLUCOSE_DECISION__RECOMMENDED_INSULIN_DRIP_RATE:
       case GlucosePackage.GLUCOSE_DECISION__RECOMMENDED_INSULIN_BOLUS:
       case GlucosePackage.GLUCOSE_DECISION__RECOMMENDED_GLUCOSE_BOLUS:
+      case GlucosePackage.GLUCOSE_DECISION__PREVIOUS_PREV_GLUCOSE:
       case GlucosePackage.GLUCOSE_DECISION__INSULIN_MODE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;

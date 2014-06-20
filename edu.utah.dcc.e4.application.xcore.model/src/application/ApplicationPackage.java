@@ -827,13 +827,13 @@ public interface ApplicationPackage extends EPackage
   int TEST_RESULT__CONVENTIONAL_TEXT_RESULT = 3;
 
   /**
-   * The feature id for the '<em><b>Conventional Units</b></em>' attribute.
+   * The feature id for the '<em><b>Conventional Unit</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_RESULT__CONVENTIONAL_UNITS = 4;
+  int TEST_RESULT__CONVENTIONAL_UNIT = 4;
 
   /**
    * The feature id for the '<em><b>Laboratory Test</b></em>' container reference.
@@ -1586,15 +1586,15 @@ public interface ApplicationPackage extends EPackage
   EAttribute getTestResult_ConventionalTextResult();
 
   /**
-   * Returns the meta object for the attribute '{@link application.TestResult#getConventionalUnits <em>Conventional Units</em>}'.
+   * Returns the meta object for the attribute '{@link application.TestResult#getConventionalUnit <em>Conventional Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Conventional Units</em>'.
-   * @see application.TestResult#getConventionalUnits()
+   * @return the meta object for the attribute '<em>Conventional Unit</em>'.
+   * @see application.TestResult#getConventionalUnit()
    * @see #getTestResult()
    * @generated
    */
-  EAttribute getTestResult_ConventionalUnits();
+  EAttribute getTestResult_ConventionalUnit();
 
   /**
    * Returns the meta object for the container reference '{@link application.TestResult#getLaboratoryTest <em>Laboratory Test</em>}'.
@@ -2194,12 +2194,12 @@ public interface ApplicationPackage extends EPackage
     EAttribute TEST_RESULT__CONVENTIONAL_TEXT_RESULT = eINSTANCE.getTestResult_ConventionalTextResult();
 
     /**
-     * The meta object literal for the '<em><b>Conventional Units</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Conventional Unit</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEST_RESULT__CONVENTIONAL_UNITS = eINSTANCE.getTestResult_ConventionalUnits();
+    EAttribute TEST_RESULT__CONVENTIONAL_UNIT = eINSTANCE.getTestResult_ConventionalUnit();
 
     /**
      * The meta object literal for the '<em><b>Laboratory Test</b></em>' container reference feature.

@@ -70,7 +70,7 @@ public class TestResultItemProvider
       addLoincCodePropertyDescriptor(object);
       addLabelNamePropertyDescriptor(object);
       addConventionalTextResultPropertyDescriptor(object);
-      addConventionalUnitsPropertyDescriptor(object);
+      addConventionalUnitPropertyDescriptor(object);
       addLaboratoryTestPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
@@ -169,20 +169,20 @@ public class TestResultItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Conventional Units feature.
+   * This adds a property descriptor for the Conventional Unit feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addConventionalUnitsPropertyDescriptor(Object object)
+  protected void addConventionalUnitPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_TestResult_conventionalUnits_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_TestResult_conventionalUnits_feature", "_UI_TestResult_type"),
-         ApplicationPackage.Literals.TEST_RESULT__CONVENTIONAL_UNITS,
+         getString("_UI_TestResult_conventionalUnit_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_TestResult_conventionalUnit_feature", "_UI_TestResult_type"),
+         ApplicationPackage.Literals.TEST_RESULT__CONVENTIONAL_UNIT,
          true,
          false,
          false,
@@ -259,7 +259,7 @@ public class TestResultItemProvider
       case ApplicationPackage.TEST_RESULT__LOINC_CODE:
       case ApplicationPackage.TEST_RESULT__LABEL_NAME:
       case ApplicationPackage.TEST_RESULT__CONVENTIONAL_TEXT_RESULT:
-      case ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNITS:
+      case ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNIT:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

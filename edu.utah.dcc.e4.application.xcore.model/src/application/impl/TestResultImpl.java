@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link application.impl.TestResultImpl#getLoincCode <em>Loinc Code</em>}</li>
  *   <li>{@link application.impl.TestResultImpl#getLabelName <em>Label Name</em>}</li>
  *   <li>{@link application.impl.TestResultImpl#getConventionalTextResult <em>Conventional Text Result</em>}</li>
- *   <li>{@link application.impl.TestResultImpl#getConventionalUnits <em>Conventional Units</em>}</li>
+ *   <li>{@link application.impl.TestResultImpl#getConventionalUnit <em>Conventional Unit</em>}</li>
  *   <li>{@link application.impl.TestResultImpl#getLaboratoryTest <em>Laboratory Test</em>}</li>
  * </ul>
  * </p>
@@ -118,24 +118,24 @@ public class TestResultImpl extends MinimalEObjectImpl.Container implements Test
   protected String conventionalTextResult = CONVENTIONAL_TEXT_RESULT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getConventionalUnits() <em>Conventional Units</em>}' attribute.
+   * The default value of the '{@link #getConventionalUnit() <em>Conventional Unit</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConventionalUnits()
+   * @see #getConventionalUnit()
    * @generated
    * @ordered
    */
-  protected static final String CONVENTIONAL_UNITS_EDEFAULT = null;
+  protected static final String CONVENTIONAL_UNIT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getConventionalUnits() <em>Conventional Units</em>}' attribute.
+   * The cached value of the '{@link #getConventionalUnit() <em>Conventional Unit</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConventionalUnits()
+   * @see #getConventionalUnit()
    * @generated
    * @ordered
    */
-  protected String conventionalUnits = CONVENTIONAL_UNITS_EDEFAULT;
+  protected String conventionalUnit = CONVENTIONAL_UNIT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -255,9 +255,9 @@ public class TestResultImpl extends MinimalEObjectImpl.Container implements Test
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getConventionalUnits()
+  public String getConventionalUnit()
   {
-    return conventionalUnits;
+    return conventionalUnit;
   }
 
   /**
@@ -265,12 +265,12 @@ public class TestResultImpl extends MinimalEObjectImpl.Container implements Test
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setConventionalUnits(String newConventionalUnits)
+  public void setConventionalUnit(String newConventionalUnit)
   {
-    String oldConventionalUnits = conventionalUnits;
-    conventionalUnits = newConventionalUnits;
+    String oldConventionalUnit = conventionalUnit;
+    conventionalUnit = newConventionalUnit;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNITS, oldConventionalUnits, conventionalUnits));
+      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNIT, oldConventionalUnit, conventionalUnit));
   }
 
   /**
@@ -397,8 +397,8 @@ public class TestResultImpl extends MinimalEObjectImpl.Container implements Test
         return getLabelName();
       case ApplicationPackage.TEST_RESULT__CONVENTIONAL_TEXT_RESULT:
         return getConventionalTextResult();
-      case ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNITS:
-        return getConventionalUnits();
+      case ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNIT:
+        return getConventionalUnit();
       case ApplicationPackage.TEST_RESULT__LABORATORY_TEST:
         if (resolve) return getLaboratoryTest();
         return basicGetLaboratoryTest();
@@ -428,8 +428,8 @@ public class TestResultImpl extends MinimalEObjectImpl.Container implements Test
       case ApplicationPackage.TEST_RESULT__CONVENTIONAL_TEXT_RESULT:
         setConventionalTextResult((String)newValue);
         return;
-      case ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNITS:
-        setConventionalUnits((String)newValue);
+      case ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNIT:
+        setConventionalUnit((String)newValue);
         return;
       case ApplicationPackage.TEST_RESULT__LABORATORY_TEST:
         setLaboratoryTest((LaboratoryTest)newValue);
@@ -460,8 +460,8 @@ public class TestResultImpl extends MinimalEObjectImpl.Container implements Test
       case ApplicationPackage.TEST_RESULT__CONVENTIONAL_TEXT_RESULT:
         setConventionalTextResult(CONVENTIONAL_TEXT_RESULT_EDEFAULT);
         return;
-      case ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNITS:
-        setConventionalUnits(CONVENTIONAL_UNITS_EDEFAULT);
+      case ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNIT:
+        setConventionalUnit(CONVENTIONAL_UNIT_EDEFAULT);
         return;
       case ApplicationPackage.TEST_RESULT__LABORATORY_TEST:
         setLaboratoryTest((LaboratoryTest)null);
@@ -488,8 +488,8 @@ public class TestResultImpl extends MinimalEObjectImpl.Container implements Test
         return LABEL_NAME_EDEFAULT == null ? labelName != null : !LABEL_NAME_EDEFAULT.equals(labelName);
       case ApplicationPackage.TEST_RESULT__CONVENTIONAL_TEXT_RESULT:
         return CONVENTIONAL_TEXT_RESULT_EDEFAULT == null ? conventionalTextResult != null : !CONVENTIONAL_TEXT_RESULT_EDEFAULT.equals(conventionalTextResult);
-      case ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNITS:
-        return CONVENTIONAL_UNITS_EDEFAULT == null ? conventionalUnits != null : !CONVENTIONAL_UNITS_EDEFAULT.equals(conventionalUnits);
+      case ApplicationPackage.TEST_RESULT__CONVENTIONAL_UNIT:
+        return CONVENTIONAL_UNIT_EDEFAULT == null ? conventionalUnit != null : !CONVENTIONAL_UNIT_EDEFAULT.equals(conventionalUnit);
       case ApplicationPackage.TEST_RESULT__LABORATORY_TEST:
         return basicGetLaboratoryTest() != null;
     }
@@ -515,8 +515,8 @@ public class TestResultImpl extends MinimalEObjectImpl.Container implements Test
     result.append(labelName);
     result.append(", conventionalTextResult: ");
     result.append(conventionalTextResult);
-    result.append(", conventionalUnits: ");
-    result.append(conventionalUnits);
+    result.append(", conventionalUnit: ");
+    result.append(conventionalUnit);
     result.append(')');
     return result.toString();
   }

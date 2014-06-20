@@ -9,7 +9,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: glucose.tests
 Require-Bundle: org.eclipse.core.runtime,
- edu.utah.dcc.e4.glucose.xcore.model;visibility:=reexport,
+ edu.utah.dcc.e4.glucose.xcore.model;visibility:=reexport;bundle-version="0.1.0",
  edu.utah.dcc.e4.application.xcore.model;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

@@ -16,6 +16,7 @@ class GlucoseDecision extends ClinicalDecision {
 	Double recommendedInsulinDripRate
 	Double recommendedInsulinBolus
 	Double recommendedGlucoseBolus
+	Double previousPrevGlucose
 	@GenModel(documentation="Adult or pediatric, determines how dose recommendations are displayed.")
 	String insulinMode
 }

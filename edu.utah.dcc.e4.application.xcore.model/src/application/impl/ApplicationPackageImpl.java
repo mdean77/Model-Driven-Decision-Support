@@ -812,7 +812,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTestResult_ConventionalUnits()
+  public EAttribute getTestResult_ConventionalUnit()
   {
     return (EAttribute)testResultEClass.getEStructuralFeatures().get(4);
   }
@@ -975,7 +975,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     createEAttribute(testResultEClass, TEST_RESULT__LOINC_CODE);
     createEAttribute(testResultEClass, TEST_RESULT__LABEL_NAME);
     createEAttribute(testResultEClass, TEST_RESULT__CONVENTIONAL_TEXT_RESULT);
-    createEAttribute(testResultEClass, TEST_RESULT__CONVENTIONAL_UNITS);
+    createEAttribute(testResultEClass, TEST_RESULT__CONVENTIONAL_UNIT);
     createEReference(testResultEClass, TEST_RESULT__LABORATORY_TEST);
 
     // Create enums
@@ -1106,7 +1106,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     initEAttribute(getTestResult_LoincCode(), theEcorePackage.getEString(), "loincCode", null, 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTestResult_LabelName(), theEcorePackage.getEString(), "labelName", null, 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTestResult_ConventionalTextResult(), theEcorePackage.getEString(), "conventionalTextResult", null, 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTestResult_ConventionalUnits(), theEcorePackage.getEString(), "conventionalUnits", null, 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTestResult_ConventionalUnit(), theEcorePackage.getEString(), "conventionalUnit", null, 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTestResult_LaboratoryTest(), this.getLaboratoryTest(), this.getLaboratoryTest_Results(), "laboratoryTest", null, 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals

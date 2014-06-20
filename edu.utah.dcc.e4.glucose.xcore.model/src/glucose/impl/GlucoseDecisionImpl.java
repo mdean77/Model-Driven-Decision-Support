@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link glucose.impl.GlucoseDecisionImpl#getRecommendedInsulinDripRate <em>Recommended Insulin Drip Rate</em>}</li>
  *   <li>{@link glucose.impl.GlucoseDecisionImpl#getRecommendedInsulinBolus <em>Recommended Insulin Bolus</em>}</li>
  *   <li>{@link glucose.impl.GlucoseDecisionImpl#getRecommendedGlucoseBolus <em>Recommended Glucose Bolus</em>}</li>
+ *   <li>{@link glucose.impl.GlucoseDecisionImpl#getPreviousPrevGlucose <em>Previous Prev Glucose</em>}</li>
  *   <li>{@link glucose.impl.GlucoseDecisionImpl#getInsulinMode <em>Insulin Mode</em>}</li>
  * </ul>
  * </p>
@@ -198,6 +199,26 @@ public class GlucoseDecisionImpl extends ClinicalDecisionImpl implements Glucose
    * @ordered
    */
   protected Double recommendedGlucoseBolus = RECOMMENDED_GLUCOSE_BOLUS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPreviousPrevGlucose() <em>Previous Prev Glucose</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPreviousPrevGlucose()
+   * @generated
+   * @ordered
+   */
+  protected static final Double PREVIOUS_PREV_GLUCOSE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPreviousPrevGlucose() <em>Previous Prev Glucose</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPreviousPrevGlucose()
+   * @generated
+   * @ordered
+   */
+  protected Double previousPrevGlucose = PREVIOUS_PREV_GLUCOSE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getInsulinMode() <em>Insulin Mode</em>}' attribute.
@@ -429,6 +450,29 @@ public class GlucoseDecisionImpl extends ClinicalDecisionImpl implements Glucose
    * <!-- end-user-doc -->
    * @generated
    */
+  public Double getPreviousPrevGlucose()
+  {
+    return previousPrevGlucose;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPreviousPrevGlucose(Double newPreviousPrevGlucose)
+  {
+    Double oldPreviousPrevGlucose = previousPrevGlucose;
+    previousPrevGlucose = newPreviousPrevGlucose;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GlucosePackage.GLUCOSE_DECISION__PREVIOUS_PREV_GLUCOSE, oldPreviousPrevGlucose, previousPrevGlucose));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getInsulinMode()
   {
     return insulinMode;
@@ -473,6 +517,8 @@ public class GlucoseDecisionImpl extends ClinicalDecisionImpl implements Glucose
         return getRecommendedInsulinBolus();
       case GlucosePackage.GLUCOSE_DECISION__RECOMMENDED_GLUCOSE_BOLUS:
         return getRecommendedGlucoseBolus();
+      case GlucosePackage.GLUCOSE_DECISION__PREVIOUS_PREV_GLUCOSE:
+        return getPreviousPrevGlucose();
       case GlucosePackage.GLUCOSE_DECISION__INSULIN_MODE:
         return getInsulinMode();
     }
@@ -512,6 +558,9 @@ public class GlucoseDecisionImpl extends ClinicalDecisionImpl implements Glucose
         return;
       case GlucosePackage.GLUCOSE_DECISION__RECOMMENDED_GLUCOSE_BOLUS:
         setRecommendedGlucoseBolus((Double)newValue);
+        return;
+      case GlucosePackage.GLUCOSE_DECISION__PREVIOUS_PREV_GLUCOSE:
+        setPreviousPrevGlucose((Double)newValue);
         return;
       case GlucosePackage.GLUCOSE_DECISION__INSULIN_MODE:
         setInsulinMode((String)newValue);
@@ -554,6 +603,9 @@ public class GlucoseDecisionImpl extends ClinicalDecisionImpl implements Glucose
       case GlucosePackage.GLUCOSE_DECISION__RECOMMENDED_GLUCOSE_BOLUS:
         setRecommendedGlucoseBolus(RECOMMENDED_GLUCOSE_BOLUS_EDEFAULT);
         return;
+      case GlucosePackage.GLUCOSE_DECISION__PREVIOUS_PREV_GLUCOSE:
+        setPreviousPrevGlucose(PREVIOUS_PREV_GLUCOSE_EDEFAULT);
+        return;
       case GlucosePackage.GLUCOSE_DECISION__INSULIN_MODE:
         setInsulinMode(INSULIN_MODE_EDEFAULT);
         return;
@@ -587,6 +639,8 @@ public class GlucoseDecisionImpl extends ClinicalDecisionImpl implements Glucose
         return RECOMMENDED_INSULIN_BOLUS_EDEFAULT == null ? recommendedInsulinBolus != null : !RECOMMENDED_INSULIN_BOLUS_EDEFAULT.equals(recommendedInsulinBolus);
       case GlucosePackage.GLUCOSE_DECISION__RECOMMENDED_GLUCOSE_BOLUS:
         return RECOMMENDED_GLUCOSE_BOLUS_EDEFAULT == null ? recommendedGlucoseBolus != null : !RECOMMENDED_GLUCOSE_BOLUS_EDEFAULT.equals(recommendedGlucoseBolus);
+      case GlucosePackage.GLUCOSE_DECISION__PREVIOUS_PREV_GLUCOSE:
+        return PREVIOUS_PREV_GLUCOSE_EDEFAULT == null ? previousPrevGlucose != null : !PREVIOUS_PREV_GLUCOSE_EDEFAULT.equals(previousPrevGlucose);
       case GlucosePackage.GLUCOSE_DECISION__INSULIN_MODE:
         return INSULIN_MODE_EDEFAULT == null ? insulinMode != null : !INSULIN_MODE_EDEFAULT.equals(insulinMode);
     }
@@ -620,6 +674,8 @@ public class GlucoseDecisionImpl extends ClinicalDecisionImpl implements Glucose
     result.append(recommendedInsulinBolus);
     result.append(", recommendedGlucoseBolus: ");
     result.append(recommendedGlucoseBolus);
+    result.append(", previousPrevGlucose: ");
+    result.append(previousPrevGlucose);
     result.append(", insulinMode: ");
     result.append(insulinMode);
     result.append(')');

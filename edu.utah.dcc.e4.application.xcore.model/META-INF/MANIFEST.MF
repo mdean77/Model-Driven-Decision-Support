@@ -7,7 +7,6 @@ Bundle-ClassPath: .
 Bundle-Activator: application.core.model.provider.ModelEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: application,
  application.impl,
  application.presentation,
@@ -25,3 +24,4 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Service-Component: OSGI-INF/patient.xml,
  OSGI-INF/icu.xml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
